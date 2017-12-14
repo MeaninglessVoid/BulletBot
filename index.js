@@ -27,15 +27,16 @@ clever.create(function(err, session) {
 
     if (message.author.bot) return;
 
-    if (
-      message.isMemberMentioned(bot.user) &&
-      message.channel.id == "388871903600967680"
-    ) {
-      let argsL = message.content.split(" ").slice(1);
-      clever.ask(argsL, function(err, response) {
-        message.reply(response);
-      });
-    }
+    // if (
+    //   message.isMemberMentioned(bot.user) &&
+    //   message.channel.id == "388871903600967680"
+    // ) {
+    //   console.log(message.content)
+    //   let argsL = message.content.split(" ").slice(1);
+    //   clever.ask(argsL, function(err, response) {
+    //     message.reply(response);
+    //   });
+    // }
 
     if (!message.content.startsWith("!")) return;
 
