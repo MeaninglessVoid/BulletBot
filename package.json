@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cleverbot.io": "^1.0.4",
     "discord.js": "github:hydrabolt/discord.js#11.3-dev",
     "moment": "^2.19.3"
   }
