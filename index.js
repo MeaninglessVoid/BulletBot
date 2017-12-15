@@ -12,8 +12,8 @@ const game = require("./commands/gaming");
 
 bot.on("ready", function() {
   console.log("Bot is ready!");
-  bot.user.setActivity("use !help")
-})
+  bot.user.setActivity("use !help");
+});
 
 bot.on("message", function(message) {
   let wm = message.content.toUpperCase();
