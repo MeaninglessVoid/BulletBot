@@ -42,7 +42,7 @@ module.exports = {
 
     let argsL = message.content.split(" ").slice(1);
 
-    times = parseInt(argsL[0]) + 1;
+    times = parseInt(argsL[0]);
 
     if (isNaN(times)) {
       times = 2;
