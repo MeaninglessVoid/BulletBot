@@ -42,7 +42,7 @@ bot.on("message", function(message) {
       " > #" +
       message.channel.name +
       " > " +
-      message.content 
+      message.content
   );
 
   var isTest = false;
@@ -83,6 +83,8 @@ bot.on("message", function(message) {
     if (command == "!USERINFO" || command == "!UI") {
       ui.ui(message, Discord);
       return;
+    } else if (command == "!VERSION") {
+      basic.version(message, bot, Discord);
     }
   }
 
@@ -104,8 +106,6 @@ bot.on("message", function(message) {
     mod.clean(message);
   } else if (command == "!VC") {
     game.vc(message);
-  } else if (command == "!VERSION") {
-    basic.version(message, bot, Discord);
   }
 });
 
