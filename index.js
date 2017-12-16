@@ -104,6 +104,8 @@ bot.on("message", function(message) {
     mod.clean(message);
   } else if (command == "!VC") {
     game.vc(message);
+  } else if (command == "!VERSION") {
+    basic.version(message, bot, Discord);
   }
 });
 

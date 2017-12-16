@@ -21,8 +21,8 @@ module.exports = {
         false
       )
       .addField(
-        "Talk to me!",
-        "mention me and send a message to talk to me. ex: <@388137765365350401> hi!",
+        "!version",
+        "gives you basic information on the bot such as verison number and github repository",
         false
       )
       .addField("OwO", "more to come soon!", false);

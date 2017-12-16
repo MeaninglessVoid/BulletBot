@@ -21,5 +21,22 @@ module.exports = {
   },
   invite: function(message) {
     message.reply("https://discord.gg/bulletbarry");
+  },
+  version: function(message, bot, Discord) {
+    var embed = new Discord.RichEmbed()
+      .setAuthor("Bot Version", message.author.displayAvatarURL)
+      .setColor("#9400ff")
+      .setThumbnail(bot.user.displayAvatarURL)
+      .setFooter("This action was preformed automatically")
+      .setTimestamp();
+    var pjson = require("../package.json");
+    embed.addField("Version", pjson.version, false);
+    embed.addField(
+      "Github Repository",
+      "https://github.com/SamuelDub/BulletBot",
+      false
+    );
+
+    message.reply({ embed }).catch(err => console.error(err));
   }
 };
