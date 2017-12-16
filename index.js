@@ -20,20 +20,7 @@ bot.on("message", function(message) {
 
   let command = wm.split(" ")[0];
 
-  if (message.author.bot) return;
-
-  // if (
-  //   message.isMemberMentioned(bot.user) &&
-  //   message.channel.id == "388871903600967680"
-  // ) {
-  //   console.log(message.content)
-  //   let argsL = message.content.split(" ").slice(1);
-  //   clever.ask(argsL, function(err, response) {
-  //     message.reply(response);
-  //   });
-  // }
-
-  if (!message.content.startsWith("!")) return;
+  if (message.author.bot || !message.content.startsWith("!")) return;
 
   console.log(
     new Date() +
