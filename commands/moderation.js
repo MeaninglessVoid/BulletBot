@@ -66,7 +66,7 @@ module.exports = {
 
     clear = (messages, channel) => {
       messages.forEach(message => {
-        channel.bulkDelete(messages);
+        channel.bulkDelete(messages).catch(err => console.error(err));
       });
     };
   }

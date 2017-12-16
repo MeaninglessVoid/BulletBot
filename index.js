@@ -36,7 +36,13 @@ bot.on("message", function(message) {
   if (!message.content.startsWith("!")) return;
 
   console.log(
-    new Date() + ": " + message.author.username + " > " + message.content
+    new Date() +
+      ": " +
+      message.author.username +
+      " > #" +
+      message.channel.name +
+      " > " +
+      message.content 
   );
 
   var isTest = false;
