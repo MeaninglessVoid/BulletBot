@@ -93,12 +93,9 @@ bot.on("guildMemberUpdate", function(oldMember, newMember) {
   var timeout = bot.guilds.first().roles.get("361164004682366977");
   var member = bot.guilds.first().roles.get("306234601817505793");
 
-  var slave = bot.guilds.first().roles.get("387964014669332486");
-
   if (!oldMember.roles.has(timeout.id) && newMember.roles.has(timeout.id)) {
     var timedOut = bot.guilds.first().members.get(newMember.id);
     timedOut.removeRole(member);
-    timedOut.removeRole(slave);
     timedOut.setVoiceChannel(
       bot.guilds.first().channels.get("374635912845590528")
     );
