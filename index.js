@@ -9,10 +9,12 @@ const mod = require("./commands/moderation");
 const basic = require("./commands/basic");
 const help = require("./commands/help");
 const game = require("./commands/gaming");
+const giveaway = require("./commands/giveaway");
 
 bot.on("ready", function() {
   console.log("Bot is ready!");
   bot.user.setActivity("use !help");
+  // bot.guilds.first().members.get("340002869912666114").removeRole(bot.guilds.first().roles.get("354392788424589342"))
 });
 
 bot.on("message", function(message) {
@@ -42,9 +44,6 @@ bot.on("message", function(message) {
       basic.agree(message);
       return;
     }
-
-    //optional id: 382288105992093698
-    //test id: 388142308006035457
   }
 
   if (message.channel.id == "382288105992093698" || isTest) {
@@ -59,9 +58,6 @@ bot.on("message", function(message) {
     }
   }
 
-  //bot-test id: 388871903600967680
-  //test id: 388158055365214208
-  //lounge id: 358341189994545153
   if (
     message.channel.id == "388871903600967680" ||
     message.channel.id == "358341189994545153" ||
@@ -81,11 +77,6 @@ bot.on("message", function(message) {
   } else if (command == "!INVITE") {
     basic.invite(message);
     return;
-    //}
-    // else if (command == "!ROLES") {
-    //     message.guild.roles.forEach((role) => {
-    //         message.guild.channels.get("388877963694964747").send(role.name + ": " + role.id)
-    //     })
   } else if (command == "!SHUTDOWN") {
     mod.shutdown(message, bot);
     return;
@@ -93,15 +84,13 @@ bot.on("message", function(message) {
     mod.clean(message);
   } else if (command == "!VC") {
     game.vc(message);
+  } else if (command == "!GIVEAWAY") {
+    giveaway.giveaway(message);
   }
 });
 
 bot.on("guildMemberUpdate", function(oldMember, newMember) {
-  //timeout id: 361164004682366977
-  //test id: 388158128195371019
   var timeout = bot.guilds.first().roles.get("361164004682366977");
-  //member id: 306234601817505793
-  //test id: 388157472885571584
   var member = bot.guilds.first().roles.get("306234601817505793");
 
   var slave = bot.guilds.first().roles.get("387964014669332486");
@@ -129,6 +118,18 @@ bot.on("voiceStateUpdate", function(oldMember, newMember) {
       muted.setMute(false);
     }, 1800000);
   }
+
+  giveaway.winners.forEach(winner => {
+    if (
+      newMember.id == winner &&
+      newMember.channel.id != undefined &&
+      newMember.channel.id == "391817447893893130"
+    ) {
+      newMember.setVoiceChannel(
+        bot.guilds.first().channels.get("387435617983660033")
+      );
+    }
+  });
 
   game.channels.forEach(channel => {
     var diffVoice;
