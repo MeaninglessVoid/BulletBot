@@ -23,10 +23,10 @@ module.exports = {
     message.reply("https://discord.gg/bulletbarry");
   },
   version: function(message, bot, Discord) {
-    var embed = new Discord.RichEmbed()
-      .setAuthor("Bot Version", message.author.displayAvatarURL)
+    var embed = new Discord.MessageEmbed()
+      .setAuthor("Bot Version", message.author.avatarURL())
       .setColor("#9400ff")
-      .setThumbnail(bot.user.displayAvatarURL)
+      .setThumbnail(bot.user.avatarURL())
       .setFooter("This action was preformed automatically")
       .setTimestamp();
     var pjson = require("../package.json");
