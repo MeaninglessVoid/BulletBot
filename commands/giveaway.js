@@ -13,7 +13,6 @@ module.exports = {
         );
       } else if (argsL[0].toLowerCase() == "start") {
         message.guild.createChannel("Giveaway", "voice").then(channel => {
-          channel.setParent(message.guild.channels.get("358336988014706689"));
           channel.overwritePermissions(
             message.guild.roles.get("306234601817505793"),
             {
@@ -21,6 +20,8 @@ module.exports = {
               CONNECT: true
             }
           );
+          channel.setParent(message.guild.channels.get("358336988014706689"));
+          channel.setPosition(0);
         });
         message.guild
           .createChannel("Giveaway Winners!", "voice")
@@ -33,6 +34,7 @@ module.exports = {
               }
             );
             channel.setParent(message.guild.channels.get("358336988014706689"));
+            channel.setPosition(1);
           });
       } else if (argsL[0].toLowerCase() == "choose") {
         var winner = message.guild.channels
