@@ -6,7 +6,7 @@ module.exports = {
       var nick = message.member.nickname;
       var role = message.member.highestRole;
 
-      var embed = new Discord.RichEmbed()
+      var embed = new Discord.MessageEmbed()
         .setAuthor("User Info", message.author.displayAvatarURL)
         .setColor("#9400ff")
         .setThumbnail(message.author.displayAvatarURL)
@@ -39,7 +39,7 @@ module.exports = {
         var nick = person.nickname;
         var role = person.highestRole;
 
-        var embed = new Discord.RichEmbed()
+        var embed = new Discord.MessageEmbed()
           .setAuthor("User Info", person.user.displayAvatarURL)
           .setColor("#9400ff")
           .setThumbnail(person.user.displayAvatarURL)
