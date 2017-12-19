@@ -27,7 +27,7 @@ module.exports = {
       .setAuthor("Bot Version", message.author.avatarURL())
       .setColor("#9400ff")
       .setThumbnail(bot.user.avatarURL())
-      .setFooter("This action was preformed automatically")
+      .setFooter("This action was performed automatically")
       .setTimestamp();
     var pjson = require("../package.json");
     embed.addField("Version", pjson.version, false);
