@@ -7,9 +7,9 @@ module.exports = {
       var role = message.member.highestRole;
 
       var embed = new Discord.MessageEmbed()
-        .setAuthor("User Info", message.author.displayAvatarURL)
+        .setAuthor("User Info", message.author.avatarURL())
         .setColor("#9400ff")
-        .setThumbnail(message.author.displayAvatarURL)
+        .setThumbnail(message.author.avatarURL())
         .setFooter("This action was preformed automatically")
         .setTimestamp()
         .addField("Username", message.author.username, false);
@@ -40,9 +40,9 @@ module.exports = {
         var role = person.highestRole;
 
         var embed = new Discord.MessageEmbed()
-          .setAuthor("User Info", person.user.displayAvatarURL)
+          .setAuthor("User Info", person.user.avatarURL())
           .setColor("#9400ff")
-          .setThumbnail(person.user.displayAvatarURL)
+          .setThumbnail(person.user.avatarURL())
           .setFooter("This action was preformed automatically")
           .setTimestamp()
           .addField("Username", person.user.username, false);
