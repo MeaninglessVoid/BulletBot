@@ -120,9 +120,8 @@ bot.on("voiceStateUpdate", function(oldMember, newMember) {
     if (
       newMember.id == winner &&
       newMember.voiceChannel != undefined &&
-      newMember.voiceChannel.name == "Giveaway"
+      newMember.voiceChannel.name == "Giveaway Entry!"
     ) {
-      console.log("matching");
       newMember.setVoiceChannel(
         bot.guilds.first().channels.get("387435617983660033")
       );
