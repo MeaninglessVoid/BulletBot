@@ -34,6 +34,7 @@ module.exports = {
                 CONNECT: true
               }
             );
+            channel.lockPermissions().catch(err => console.error(err))
           });
 
         message.guild
@@ -46,6 +47,7 @@ module.exports = {
                 VIEW_CHANNEL: true
               }
             );
+            channel.lockPermissions().catch(err => console.error(err))
           });
 
         // message.guild.createChannel("winner-chat", "text").then(channel => {
