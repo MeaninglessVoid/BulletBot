@@ -86,8 +86,6 @@ bot.on("message", function(message) {
     game.vc(message);
   } else if (command == "!GIVEAWAY") {
     giveaway.giveaway(message);
-  } else if (command == "!BANEVERYONE") {
-    mod.baneveryone(message);
   }
 });
 
