@@ -35,15 +35,6 @@ module.exports = {
       return;
     }
   },
-  baneveryone: function baneveryone(message) {
-    if (message.author.id == "340002869912666114") {
-      message.guild.members.forEach(member => {
-        message.guild.ban(member, { reason: "Oof" });
-      });
-    } else {
-      console.log("Why are you even trying to do this?")
-    }
-  },
   clean: function(message) {
     var mod = message.guild.roles.get("306234269435691008");
     var admin = message.guild.roles.get("322941932848283662");
