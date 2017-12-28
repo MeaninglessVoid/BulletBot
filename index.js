@@ -61,6 +61,7 @@ bot.on("message", function(message) {
   if (
     message.channel.id == "388871903600967680" ||
     message.channel.id == "358341189994545153" ||
+    message.channel.id == "358341168066723845" ||
     isTest
   ) {
     if (command == "!USERINFO" || command == "!UI") {
