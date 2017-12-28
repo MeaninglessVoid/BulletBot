@@ -40,10 +40,10 @@ bot.on("message", function(message) {
   //welcome id: 384171995597897728
   //test id: 388137579821924366
   if (message.channel.id == "384171995597897728" || isTest) {
-    // if (command == "!AGREE") {
-    //   basic.agree(message);
-    //   return;
-    // }
+    if (command == "!AGREE") {
+      basic.agree(message);
+      return;
+    }
   }
 
   if (message.channel.id == "382288105992093698" || isTest) {
