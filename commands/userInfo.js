@@ -53,7 +53,7 @@ module.exports = {
         if (person.presence.activity != null) {
           embed.addField(
             "Game",
-            "Playing " + person.presence.activity.name,
+            person.presence.activity.name,
             false
           );
         }
