@@ -15,8 +15,9 @@ module.exports = {
         .addField("Username", message.author.username, false);
       if (nick == null) nick = message.author.username;
       embed.addField("Nickname", nick, false);
-      if (message.member.presence.game != null) {
-        embed.addField("Game", message.member.presence.game.name, false);
+      console.log(message.m)
+      if (message.member.presence.activity != null) {
+        embed.addField("Game", message.member.presence.activity.name, false);
       }
       embed.addField("Status", message.member.presence.status, false);
       embed.addField("Joined Date", message.member.joinedAt, false);
@@ -48,8 +49,8 @@ module.exports = {
           .addField("Username", person.user.username, false);
         if (nick == null) nick = person.user.username;
         embed.addField("Nickname", nick, false);
-        if (person.presence.game != null) {
-          embed.addField("Game", "Playing " + person.presence.game.name, false);
+        if (person.presence.activity != null) {
+          embed.addField("Game", "Playing " + person.presence.activity.name, false);
         }
         embed.addField("Status", message.member.presence.status, false);
         embed.addField("Joined Date", person.joinedAt, false);
