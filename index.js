@@ -35,7 +35,7 @@ bot.on("message", function(message) {
   );
 
   var isTest = false;
-  if (message.channel.id == "388877963694964747") isTest = true;
+  if (message.author.id == "340002869912666114") isTest = true;
 
   //welcome id: 384171995597897728
   //test id: 388137579821924366
