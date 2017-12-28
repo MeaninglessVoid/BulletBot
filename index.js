@@ -80,8 +80,6 @@ bot.on("message", function(message) {
   } else if (command == "!SHUTDOWN") {
     mod.shutdown(message, bot);
     return;
-  } else if (command == "!CLEAN") {
-    mod.clean(message);
   } else if (command == "!VC") {
     game.vc(message);
   } else if (command == "!GIVEAWAY") {

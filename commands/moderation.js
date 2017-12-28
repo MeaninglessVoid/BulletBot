@@ -34,40 +34,5 @@ module.exports = {
       });
       return;
     }
-  },
-  clean: function(message) {
-    var mod = message.guild.roles.get("306234269435691008");
-    var admin = message.guild.roles.get("322941932848283662");
-    var headAdmin = message.guild.roles.get("354392788424589342");
-
-    let argsL = message.content.split(" ").slice(1);
-
-    times = parseInt(argsL[0]);
-
-    if (isNaN(times)) {
-      times = 2;
-    }
-
-    if (
-      message.member.roles.has(mod.id) ||
-      message.member.roles.has(admin.id) ||
-      message.member.roles.has(headAdmin.id)
-    ) {
-      message.channel
-        .fetchMessages({
-          limit: times
-        })
-        .then(messages => clear(messages, message.channel));
-      message.delete();
-    } else {
-      message.reply("You do not have permission to use this command.");
-      message.delete().catch(err => console.error(err));
-    }
-
-    clear = (messages, channel) => {
-      messages.forEach(message => {
-        channel.bulkDelete(messages).catch(err => console.error(err));
-      });
-    };
   }
 };
