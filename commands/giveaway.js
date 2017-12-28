@@ -26,7 +26,6 @@ module.exports = {
         message.guild
           .createChannel("Giveaway Entry!", "voice")
           .then(channel => {
-            channel.setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
             channel.overwritePermissions(
               message.guild.roles.get("306234601817505793"),
               {
@@ -34,25 +33,28 @@ module.exports = {
                 CONNECT: true
               }
             );
-            channel.lockPermissions().catch(err => console.error(err))
           });
 
         message.guild
           .createChannel("Giveaway Winners!", "voice")
           .then(channel => {
-            channel.setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
             channel.overwritePermissions(
               message.guild.roles.get("306234601817505793"),
               {
-                VIEW_CHANNEL: true
+                VIEW_CHANNEL: true,
+                CONNECT: false,
+                SPEAK: true
               }
             );
-            channel.lockPermissions().catch(err => console.error(err))
           });
 
-        // message.guild.createChannel("winner-chat", "text").then(channel => {
-        //   channel.setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
-        // });
+        message.guild.createChannel("winner-chat", "text");
+
+        setTimeout(function() {
+          message.guild.channels.find("name", "Giveaway Entry!").setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
+          message.guild.channels.find("name", "Giveaway Winners!").setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
+          message.guild.channels.find("name", "winner-chat").setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
+        }, 1000)
 
       } else if (argsL[0].toLowerCase() == "choose") {
         var winner = message.guild.channels
@@ -68,7 +70,7 @@ module.exports = {
         message.guild.channels.find("name", "🎉 GIVEAWAY!").delete();
         message.guild.channels.find("name", "Giveaway Entry!").delete();
         message.guild.channels.find("name", "Giveaway Winners!").delete();
-        // message.guild.channels.find("name", "winner-chat").delete();
+        message.guild.channels.find("name", "winner-chat").delete();
         winners = [];
       }
     } else {
