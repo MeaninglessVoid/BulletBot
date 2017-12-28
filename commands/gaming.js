@@ -22,12 +22,16 @@ module.exports = {
           SPEAK: true
         }
       );
-      channel.setParent(message.guild.channels.get("358347251900350464"));
-      message.member.setVoiceChannel(channel);
+    });
+
+    setTimeout(function() {
+      var createChannel = message.guild.channels.find("name", game);
+      createChannel.setParent(message.guild.channels.get("358347251900350464"));
+      message.member.setVoiceChannel(createChannel);
       channels.push({
-        id: channel.id,
+        id: createChannel.id,
         owner: message.author.id
       });
-    });
+    }, 1000);
   }
 };
