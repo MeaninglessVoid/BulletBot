@@ -12,6 +12,12 @@ module.exports = {
     message.delete();
 
     game = "🎮 " + message.author.username + "'s Gaming Channel";
+    
+    let argsL = message.content.split(" ").slice(1);
+
+    var userLimit = parseInt(argsL[0]);
+
+    if(isNaN(userLimit)) userLimit = 99;
 
     message.guild.createChannel(game, "voice").then(channel => {
       channel.overwritePermissions(
@@ -27,6 +33,7 @@ module.exports = {
     setTimeout(function() {
       var createChannel = message.guild.channels.find("name", game);
       createChannel.setParent(message.guild.channels.get("358347251900350464"));
+      createChannel.setUserLimit(userLimit)
       message.member.setVoiceChannel(createChannel);
       channels.push({
         id: createChannel.id,
