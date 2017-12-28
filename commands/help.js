@@ -16,7 +16,7 @@ module.exports = {
         false
       )
       .addField(
-        "!vc <number of people you want in your room>",
+        "!vc <room limit>",
         "create a temporary voice channel for you and your friends!",
         false
       )
