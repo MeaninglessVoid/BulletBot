@@ -49,7 +49,7 @@ module.exports = {
     embed.addField("Version", pjson.version, false);
     embed.addField(
       "Github Repository",
-      "https://github.com/SamuelDub/BulletBot",
+      "https://github.com/MeaninglessVoid/BulletBot",
       false
     );
 
