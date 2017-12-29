@@ -25,6 +25,11 @@ module.exports = {
         "gives you basic information on the bot such as verison number and github repository",
         false
       )
+      .addField(
+        "!request <feature you want added>",
+        "sends a request to add a feature to me!",
+        false
+      )
       .addField("OwO", "more to come soon!", false);
 
     message.author

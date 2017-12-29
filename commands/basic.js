@@ -22,6 +22,22 @@ module.exports = {
   invite: function(message) {
     message.reply("https://discord.gg/bulletbarry");
   },
+  request: function(message, bot, Discord) {
+    var embed = new Discord.MessageEmbed()
+      .setAuthor(message.author.username, message.author.avatarURL())
+      .setColor("#9400ff")
+      .setFooter("This action was performed automatically")
+      .setTimestamp();
+    embed.addField("Request", message.content.substring(8), false);
+
+    bot.guilds
+      .first()
+      .members.get("208801766496534528")
+      .send({ embed })
+      .catch(err => console.error(err));
+
+    message.delete();
+  },
   version: function(message, bot, Discord) {
     var embed = new Discord.MessageEmbed()
       .setAuthor("Bot Version", message.author.avatarURL())
