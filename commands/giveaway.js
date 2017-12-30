@@ -12,16 +12,18 @@ module.exports = {
           "Please use either `!giveaway start` to start the giveaway, `!giveaway choose` to choose a lucky winner, or `!giveaway end` to end the giveaway and delete both channels"
         );
       } else if (argsL[0].toLowerCase() == "start") {
-        message.guild.createChannel("🎉 GIVEAWAY!", "category").then(channel => {
-          channel.setPosition(3);
-          channel.overwritePermissions(
-            message.guild.roles.get("306234601817505793"),
-            {
-              VIEW_CHANNEL: true,
-              CONNECT: true
-            }
-          );
-        });
+        message.guild
+          .createChannel("🎉 GIVEAWAY!", "category")
+          .then(channel => {
+            channel.setPosition(3);
+            channel.overwritePermissions(
+              message.guild.roles.get("306234601817505793"),
+              {
+                VIEW_CHANNEL: true,
+                CONNECT: true
+              }
+            );
+          });
 
         message.guild
           .createChannel("Giveaway Entry!", "voice")
@@ -48,14 +50,17 @@ module.exports = {
             );
           });
 
-        message.guild.createChannel("winner-chat", "text");
-
         setTimeout(function() {
-          message.guild.channels.find("name", "Giveaway Entry!").setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
-          message.guild.channels.find("name", "Giveaway Winners!").setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
-          message.guild.channels.find("name", "winner-chat").setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
-        }, 1000)
-
+          message.guild.channels
+            .find("name", "Giveaway Entry!")
+            .setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
+          message.guild.channels
+            .find("name", "Giveaway Winners!")
+            .setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
+          message.guild.channels
+            .find("name", "winner-chat")
+            .setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
+        }, 1000);
       } else if (argsL[0].toLowerCase() == "choose") {
         var winner = message.guild.channels
           .find("name", "Giveaway Entry!")
@@ -70,7 +75,6 @@ module.exports = {
         message.guild.channels.find("name", "🎉 GIVEAWAY!").delete();
         message.guild.channels.find("name", "Giveaway Entry!").delete();
         message.guild.channels.find("name", "Giveaway Winners!").delete();
-        message.guild.channels.find("name", "winner-chat").delete();
         winners = [];
       }
     } else {
