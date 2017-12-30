@@ -10,7 +10,7 @@ module.exports = {
 
     if (days <= 7) {
       message.reply(
-        "Your account is too young to be given the member role automatically, please contact <@&322941932848283662> or <@&306234269435691008> to resolve this issue, thank you!"
+        "Your account is too young to be given the member role automatically, please contact <@&306234269435691008> or <@&322941932848283662> to resolve this issue, thank you!"
       );
       return;
     }
