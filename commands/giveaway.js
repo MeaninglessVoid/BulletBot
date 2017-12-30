@@ -57,9 +57,6 @@ module.exports = {
           message.guild.channels
             .find("name", "Giveaway Winners!")
             .setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
-          message.guild.channels
-            .find("name", "winner-chat")
-            .setParent(message.guild.channels.find("name", "🎉 GIVEAWAY!"));
         }, 1000);
       } else if (argsL[0].toLowerCase() == "choose") {
         var winner = message.guild.channels
