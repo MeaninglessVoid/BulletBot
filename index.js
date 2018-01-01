@@ -35,7 +35,13 @@ bot.on("message", function(message) {
   );
 
   var isTest = false;
-  if (message.author.id == "340002869912666114") isTest = true;
+  if (
+    message.author.id == "340002869912666114" ||
+    message.author.id == "326437722120126485" ||
+    message.author.id == "148847883632902151"
+  ) {
+    isTest = true;
+  }
 
   //welcome id: 384171995597897728
   //test id: 388137579821924366
@@ -86,7 +92,7 @@ bot.on("message", function(message) {
   } else if (command == "!GIVEAWAY") {
     giveaway.giveaway(message);
   } else if (command == "!REQUEST") {
-    basic.request(message, bot, Discord)
+    basic.request(message, bot, Discord);
   }
 });
 
