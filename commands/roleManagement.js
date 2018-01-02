@@ -55,7 +55,7 @@ module.exports = {
       return;
     }
 
-    message.member.addRole(roleWant, "Bot added role automatically").catch(err => {
+    message.member.addRole(roleWant, "Bot added role by request").catch(err => {
       console.error(err);
     });
 
@@ -97,7 +97,7 @@ module.exports = {
       return;
     }
 
-    message.member.removeRole(roleWant, "Bot removed role automatically").catch(err => {
+    message.member.removeRole(roleWant, "Bot removed role by request").catch(err => {
       console.error(err);
     });
 

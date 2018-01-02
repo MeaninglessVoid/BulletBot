@@ -10,7 +10,7 @@ module.exports = {
         .setAuthor("User Info", message.author.avatarURL())
         .setColor("#9400ff")
         .setThumbnail(message.author.avatarURL())
-        .setFooter("This action was preformed automatically")
+        .setFooter("This action was performed automatically")
         .setTimestamp()
         .addField("Username", message.author.username, false);
       if (!(nick == null || nick == message.author.username)) {
@@ -44,7 +44,7 @@ module.exports = {
           .setAuthor("User Info", person.user.avatarURL())
           .setColor("#9400ff")
           .setThumbnail(person.user.avatarURL())
-          .setFooter("This action was preformed automatically")
+          .setFooter("This action was performed automatically")
           .setTimestamp()
           .addField("Username", person.user.username, false);
           if (!(nick == null || nick == message.author.username)) {
