@@ -14,7 +14,6 @@ const giveaway = require("./commands/giveaway");
 bot.on("ready", function() {
   console.log("Bot is ready!");
   bot.user.setActivity("use !help");
-  // bot.guilds.first().members.get("340002869912666114").removeRole(bot.guilds.first().roles.get("354392788424589342"))
 });
 
 bot.on("message", function(message) {
@@ -43,8 +42,6 @@ bot.on("message", function(message) {
     isTest = true;
   }
 
-  //welcome id: 384171995597897728
-  //test id: 388137579821924366
   if (message.channel.id == "384171995597897728" || isTest) {
     if (command == "!AGREE") {
       basic.agree(message);
