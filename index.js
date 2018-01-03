@@ -11,9 +11,17 @@ const help = require("./commands/help");
 const game = require("./commands/gaming");
 const giveaway = require("./commands/giveaway");
 
+let timedOutMembers = [];
+
 bot.on("ready", function() {
   console.log("Bot is ready!");
   bot.user.setActivity("use !help");
+  bot.guilds
+    .first()
+    .roles.get("361164004682366977")
+    .members.forEach(member => {
+      timedOutMembers.push(member.id);
+    });
 });
 
 bot.on("message", function(message) {
@@ -93,12 +101,22 @@ bot.on("message", function(message) {
   }
 });
 
+bot.on("guildMemberAdd", (guildMember) => {
+  var timeout = bot.guilds.first().roles.get("361164004682366977");
+  timedOutMembers.forEach(member => {
+    if (member == guildMember.id) {
+      guildMember.addRole(timeout);
+    }
+  });
+});
+
 bot.on("guildMemberUpdate", function(oldMember, newMember) {
   var timeout = bot.guilds.first().roles.get("361164004682366977");
   var member = bot.guilds.first().roles.get("306234601817505793");
 
   if (!oldMember.roles.has(timeout.id) && newMember.roles.has(timeout.id)) {
     var timedOut = bot.guilds.first().members.get(newMember.id);
+    timedOutMembers.push(newMember.id);
     timedOut.removeRole(member);
     timedOut.setVoiceChannel(
       bot.guilds.first().channels.get("374635912845590528")
@@ -109,6 +127,10 @@ bot.on("guildMemberUpdate", function(oldMember, newMember) {
     var timedOut = bot.guilds.first().members.get(oldMember.id);
     timedOut.removeRole(timeout);
     timedOut.addRole(member);
+    var index = timedOutMembers.indexOf(newMember.id);
+    if (index >= 0) {
+      timedOutMembers.splice(index, 1);
+    }
   }
 });
 
