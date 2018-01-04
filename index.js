@@ -78,7 +78,7 @@ bot.on("message", function(message) {
     if (command == "!USERINFO" || command == "!UI") {
       ui.ui(message, Discord);
       return;
-    } else if (command == "!VERSION") {
+    } else if (command == "!VERSION" || command == "!V") {
       basic.version(message, bot, Discord);
     }
   }
