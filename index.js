@@ -101,7 +101,7 @@ bot.on("message", function(message) {
   }
 });
 
-bot.on("guildMemberAdd", (guildMember) => {
+bot.on("guildMemberAdd", guildMember => {
   var timeout = bot.guilds.first().roles.get("361164004682366977");
   timedOutMembers.forEach(member => {
     if (member == guildMember.id) {

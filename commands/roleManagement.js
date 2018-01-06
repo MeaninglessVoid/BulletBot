@@ -29,7 +29,7 @@ const allowedRoles = [
   "354413622459498496", //Cyan_Saturated
   "354413643103862784", //Blue_Saturated
   "387049364390150144", //Purple_Saturated
-  "354988839485440009"  //Trevo\'s_Brodie_Armada
+  "354988839485440009" //Trevo\'s_Brodie_Armada
 ];
 
 module.exports = {
@@ -97,9 +97,11 @@ module.exports = {
       return;
     }
 
-    message.member.removeRole(roleWant, "Bot removed role by request").catch(err => {
-      console.error(err);
-    });
+    message.member
+      .removeRole(roleWant, "Bot removed role by request")
+      .catch(err => {
+        console.error(err);
+      });
 
     message.delete();
   }

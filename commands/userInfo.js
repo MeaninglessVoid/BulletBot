@@ -47,15 +47,11 @@ module.exports = {
           .setFooter("This action was performed automatically")
           .setTimestamp()
           .addField("Username", person.user.username, false);
-          if (!(nick == null || nick == message.author.username)) {
-            embed.addField("Nickname", nick, false);
-          }
+        if (!(nick == null || nick == message.author.username)) {
+          embed.addField("Nickname", nick, false);
+        }
         if (person.presence.activity != null) {
-          embed.addField(
-            "Game",
-            person.presence.activity.name,
-            false
-          );
+          embed.addField("Game", person.presence.activity.name, false);
         }
         embed.addField("Status", message.member.presence.status, false);
         embed.addField("Joined Date", person.joinedAt, false);
