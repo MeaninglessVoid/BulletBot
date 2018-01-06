@@ -175,6 +175,4 @@ bot.on("voiceStateUpdate", function(oldMember, newMember) {
   });
 });
 
-bot.login(token.botToken).catch(err => {
-  console.error(err);
-});
+bot.login(token.botToken).catch(err => console.error(err));
