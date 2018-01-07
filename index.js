@@ -25,11 +25,11 @@ bot.on("ready", function() {
 });
 
 bot.on("message", function(message) {
-  let wm = message.content.toUpperCase();
-
-  let command = wm.split(" ")[0];
-
   if (message.author.bot || !message.content.startsWith("!")) return;
+  
+  let wm = message.content.toUpperCase();
+  
+  let command = wm.split(" ")[0];
 
   console.log(
     new Date() +
