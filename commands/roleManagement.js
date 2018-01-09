@@ -48,9 +48,11 @@ module.exports = {
     });
 
     if (!allowedToHave) {
-      message.author.send(
-        "You do not have the permission to have that role, or it doesn't exist."
-      );
+      message.author
+        .send(
+          "You do not have the permission to have that role, or it doesn't exist."
+        )
+        .catch(err => console.error(err));
       message.delete();
       return;
     }
@@ -73,7 +75,9 @@ module.exports = {
     });
 
     if (!allowedToRemove) {
-      message.author.send("You don't have this role!");
+      message.author
+        .send("You don't have this role!")
+        .catch(err => console.error(err));
       message.delete();
       return;
     }
@@ -91,9 +95,11 @@ module.exports = {
     });
 
     if (!allowedToRemove) {
-      message.author.send(
-        "You do not have permission to remove that role, or it doesn't exist"
-      );
+      message.author
+        .send(
+          "You do not have permission to remove that role, or it doesn't exist"
+        )
+        .catch(err => console.error(err));
       return;
     }
 
