@@ -9,7 +9,7 @@ module.exports = {
       .setFooter("This action was preformed automatically")
       .setTimestamp()
       //.addField('Construction', "This command is under construction, try again later!", false)
-      .addField("!ui", "gives you basic information on yourself!", false)
+      .addField("!userinfo or !ui", "gives you basic information on yourself!", false)
       .addField(
         "!invite",
         "gives you an invite to share with your friends!",
