@@ -11,7 +11,7 @@ module.exports = {
       //.addField('Construction', "This command is under construction, try again later!", false)
       .addField("!userinfo or !ui", "gives you basic information on yourself!", false)
       .addField(
-        "!invite",
+        "!invite or !inv",
         "gives you an invite to share with your friends!",
         false
       )
@@ -21,7 +21,7 @@ module.exports = {
         false
       )
       .addField(
-        "!version",
+        "!version or !v",
         "gives you basic information on the bot such as verison number and github repository",
         false
       )

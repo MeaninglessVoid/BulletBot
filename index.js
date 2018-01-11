@@ -86,7 +86,7 @@ bot.on("message", function(message) {
   if (command == "!HELP") {
     help.help(bot, message);
     return;
-  } else if (command == "!INVITE") {
+  } else if (command == "!INVITE" || command == "!INV") {
     basic.invite(message);
     return;
   } else if (command == "!SHUTDOWN") {
