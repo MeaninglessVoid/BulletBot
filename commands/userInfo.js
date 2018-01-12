@@ -22,8 +22,9 @@ module.exports = {
       embed.addField("Status", message.member.presence.status, false);
       embed.addField("Joined Date", message.member.joinedAt, false);
       embed.addField("Account Creation Date", message.author.createdAt, false);
-      if (message.member.highestRole.name == "Secret Services")
+      if (message.member.highestRole.name == "Secret Services") {
         role = message.guild.roles.get("354392788424589342");
+      }
       embed.addField("Highest Role", role, false);
 
       message.channel
@@ -56,8 +57,9 @@ module.exports = {
         embed.addField("Status", message.member.presence.status, false);
         embed.addField("Joined Date", person.joinedAt, false);
         embed.addField("Account Creation Date", person.user.createdAt, false);
-        if (role.name == "Secret Services")
+        if (role.name == "Secret Services") {
           role = message.guild.roles.get("354392788424589342");
+        }
         embed.addField("Highest Role", role, false);
 
         message.channel

@@ -8,8 +8,12 @@ module.exports = {
       .setThumbnail(bot.user.avatarURL())
       .setFooter("This action was preformed automatically")
       .setTimestamp()
-      //.addField('Construction', "This command is under construction, try again later!", false)
-      .addField("!userinfo or !ui", "gives you basic information on yourself!", false)
+      // .addField('Construction', "This command is under construction, try again later!", false)
+      .addField(
+        "!userinfo or !ui",
+        "gives you basic information on yourself!",
+        false
+      )
       .addField(
         "!invite or !inv",
         "gives you an invite to share with your friends!",

@@ -42,8 +42,7 @@ module.exports = {
     }, 1000);
   },
   maria: function(message) {
-
-    if(message.author.id != "148847883632902151") return;
+    if (message.author.id != "148847883632902151") return;
 
     if (message.member.voiceChannel == undefined) {
       message.reply(

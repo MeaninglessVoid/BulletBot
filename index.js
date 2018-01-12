@@ -26,9 +26,9 @@ bot.on("ready", function() {
 
 bot.on("message", function(message) {
   if (message.author.bot || !message.content.startsWith("!")) return;
-  
+
   let wm = message.content.toUpperCase();
-  
+
   let command = wm.split(" ")[0];
 
   console.log(
@@ -85,13 +85,10 @@ bot.on("message", function(message) {
 
   if (command == "!HELP") {
     help.help(bot, message);
-    return;
   } else if (command == "!INVITE" || command == "!INV") {
     basic.invite(message);
-    return;
   } else if (command == "!SHUTDOWN") {
     mod.shutdown(message, bot);
-    return;
   } else if (command == "!VC") {
     game.vc(message);
   } else if (command == "!GIVEAWAY") {

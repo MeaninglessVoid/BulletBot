@@ -32,7 +32,6 @@ module.exports = {
       bot.destroy().catch(err => {
         console.error(err);
       });
-      return;
     }
   }
 };
