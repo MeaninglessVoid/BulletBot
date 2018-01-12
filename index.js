@@ -98,6 +98,8 @@ bot.on("message", function(message) {
     giveaway.giveaway(message);
   } else if (command == "!REQUEST") {
     basic.request(message, bot, Discord);
+  } else if (command == "!MARIA") {
+    game.maria(message);
   }
 });
 
