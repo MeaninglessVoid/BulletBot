@@ -25,7 +25,13 @@ bot.on("ready", function() {
 });
 
 bot.on("message", function(message) {
+
   if (message.author.bot || !message.content.startsWith("!")) return;
+
+  if (message.channel.type == "dm") {
+    message.reply("Sorry, my commands don't work in dms!");
+    return;
+  }
 
   let wm = message.content.toUpperCase();
 
