@@ -42,18 +42,16 @@ module.exports = {
     }, 1000);
   },
   maria: function(message) {
-    if (message.author.id != "148847883632902151") return;
-
-    if (message.member.voiceChannel == undefined) {
-      message.reply(
-        "You must already be in a voice channel to use this command"
-      );
-      message.delete();
+    
+    if (
+      message.author.id != "148847883632902151" &&
+      message.author.id != "340002869912666114"
+    ) {
       return;
     }
 
     message.delete();
-
+    
     game = "🎮 " + message.author.username + "'s Gaming Channel";
 
     let argsL = message.content.split(" ").slice(1);
