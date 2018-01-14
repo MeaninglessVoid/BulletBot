@@ -23,8 +23,8 @@ module.exports = {
     message.reply("https://discord.gg/bulletbarry");
   },
   request: function(message, bot, Discord) {
-    var embed = new Discord.MessageEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL())
+    var embed = new Discord.RichEmbed()
+      .setAuthor(message.author.username, message.author.displayAvatarURL)
       .setColor("#9400ff")
       .setFooter("This action was performed automatically")
       .setTimestamp();
@@ -39,10 +39,10 @@ module.exports = {
     message.delete();
   },
   version: function(message, bot, Discord) {
-    var embed = new Discord.MessageEmbed()
-      .setAuthor("Bot Version", message.author.avatarURL())
+    var embed = new Discord.RichEmbed()
+      .setAuthor("Bot Version", message.author.displayAvatarURL)
       .setColor("#9400ff")
-      .setThumbnail(bot.user.avatarURL())
+      .setThumbnail(bot.user.displayAvatarURL)
       .setFooter("This action was performed automatically")
       .setTimestamp();
     var pjson = require("../package.json");

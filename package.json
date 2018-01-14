@@ -1,6 +1,6 @@
 {
   "name": "bulletbot",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "github:hydrabolt/discord.js",
+    "discord.js": "^11.3.0",
     "moment": "^2.19.3"
   }
 }

@@ -6,10 +6,10 @@ module.exports = {
       var nick = message.member.nickname;
       var role = message.member.highestRole;
 
-      var embed = new Discord.MessageEmbed()
-        .setAuthor("User Info", message.author.displayAvatarURL())
+      var embed = new Discord.RichEmbed()
+        .setAuthor("User Info", message.author.displayAvatarURL)
         .setColor("#9400ff")
-        .setThumbnail(message.author.displayAvatarURL())
+        .setThumbnail(message.author.displayAvatarURL)
         .setFooter("This action was performed automatically")
         .setTimestamp()
         .addField("Username", message.author.username, false);
@@ -41,10 +41,10 @@ module.exports = {
         var nick = person.nickname;
         var role = person.highestRole;
 
-        var embed = new Discord.MessageEmbed()
-          .setAuthor("User Info", person.user.displayAvatarURL())
+        var embed = new Discord.RichEmbed()
+          .setAuthor("User Info", person.user.displayAvatarURL)
           .setColor("#9400ff")
-          .setThumbnail(person.user.displayAvatarURL())
+          .setThumbnail(person.user.displayAvatarURL)
           .setFooter("This action was performed automatically")
           .setTimestamp()
           .addField("Username", person.user.username, false);
