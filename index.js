@@ -108,7 +108,6 @@ bot.on("message", function(message) {
 bot.on("messageDelete", message => {
   if(message.author.bot) return;
   try {
-    console.log(message.content);
     var embed = new Discord.RichEmbed()
       .setAuthor("Deleted Message", message.author.displayAvatarURL)
       .setColor("#9400ff")
