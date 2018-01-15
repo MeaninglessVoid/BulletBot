@@ -11,7 +11,7 @@ module.exports = {
 
     message.delete();
 
-    game = "🎮 " + message.author.username + "'s Gaming Channel";
+    game = `🎮 ${message.author.username}'s Gaming Channel`;
 
     let argsL = message.content.split(" ").slice(1);
 
@@ -52,7 +52,7 @@ module.exports = {
 
     message.delete();
     
-    game = "🎮 " + message.author.username + "'s Gaming Channel";
+    game = `🎮 ${message.author.username}'s Gaming Channel`;
 
     let argsL = message.content.split(" ").slice(1);
 
