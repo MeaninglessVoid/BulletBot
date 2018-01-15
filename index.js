@@ -102,6 +102,8 @@ bot.on("message", function(message) {
     basic.request(message, bot, Discord);
   } else if (command == "!MARIA") {
     game.maria(message);
+  } else if (command == "!CLEAR") {
+    mod.clear(message);
   }
 });
 

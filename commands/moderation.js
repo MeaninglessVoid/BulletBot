@@ -33,5 +33,25 @@ module.exports = {
         console.error(err);
       });
     }
+  }, 
+  clear: function(message) {
+    var headAdmin = message.guild.roles.get("354392788424589342");
+    var admin = message.guild.roles.get("322941932848283662");
+    var mod = message.guild.roles.get("306234269435691008");
+    var helper = message.guild.roles.get("385995809461764096");
+    var isVoid = message.guild.members.get("340002869912666114");
+
+    if (
+      message.member.roles.has(headAdmin.id) ||
+      message.member.roles.has(admin.id) ||
+      message.member.roles.has(mod.id) ||
+      message.member.roles.has(helper.id) ||
+      message.author.id == isVoid.id
+    ) {
+
+    } else {
+      message.reply("you don't have permissions to use this command!")
+    }
+
   }
 };
