@@ -106,7 +106,7 @@ bot.on("message", function(message) {
 });
 
 bot.on("messageDelete", message => {
-  if(message.author.bot) return;
+  if(message.author.bot || message.content.toLowerCase() == "!agree") return;
   try {
     var embed = new Discord.RichEmbed()
       .setAuthor("Deleted Message", message.author.displayAvatarURL)
