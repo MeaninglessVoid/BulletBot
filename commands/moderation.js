@@ -33,7 +33,7 @@ module.exports = {
         console.error(err);
       });
     }
-  }, 
+  },
   clear: function(message) {
     var headAdmin = message.guild.roles.get("354392788424589342");
     var admin = message.guild.roles.get("322941932848283662");
@@ -48,10 +48,26 @@ module.exports = {
       message.member.roles.has(helper.id) ||
       message.author.id == isVoid.id
     ) {
+      let argsL = message.content.split(" ").slice(1);
 
+      var times = parseInt(argsL[0]);
+
+      if (isNaN(times)) {
+        times = 1;
+      }
+
+      if (times > 99) {
+        message.reply("You may only delete 99 messages at a time!");
+        return;
+      }
+      message.channel
+        .fetchMessages({ limit: times + 1 })
+        .then(messages => {
+          message.channel.bulkDelete(messages);
+        })
+        .catch(err => console.error(err));
     } else {
-      message.reply("you don't have permissions to use this command!")
+      message.reply("you don't have permissions to use this command!");
     }
-
   }
 };
