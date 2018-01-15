@@ -110,6 +110,7 @@ bot.on("messageDelete", message => {
   try {
     var embed = new Discord.RichEmbed()
       .setAuthor("Deleted Message", message.author.displayAvatarURL)
+      .setThumbnail(message.author.displayAvatarURL)
       .setColor("#9400ff")
       .setTimestamp()
       .addField("Message Content", message.content, false)
