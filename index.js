@@ -105,6 +105,37 @@ bot.on("message", function(message) {
   }
 });
 
+bot.on("messageDelete", message => {
+  if(message.author.bot) return;
+  try {
+    console.log(message.content);
+    var embed = new Discord.RichEmbed()
+      .setAuthor("Deleted Message", message.author.displayAvatarURL)
+      .setColor("#9400ff")
+      .setTimestamp()
+      .addField("Message Content", message.content, false)
+      .addField("Message ID", message.id, false)
+      .addField("Message Author", message.author.username, false)
+      .addField("Message Author ID", message.author.id, false)
+      .addField("Message Channel Name", message.channel.name, false)
+      .addField("Message Channel ID", message.channel.id, false)
+    bot.guilds
+      .first()
+      .channels.get("402246491445657610")
+      .send({
+        embed
+      })
+      .catch(err => {
+        conosle.error(err);
+      });
+  } catch (error) {
+    bot.guilds
+      .first()
+      .channels.get("402246491445657610")
+      .send("You shouldn't be able to see this message, please tell void he is a moron and to fix this already");
+  }
+});
+
 bot.on("guildMemberAdd", guildMember => {
   var timeout = bot.guilds.first().roles.get("361164004682366977");
   timedOutMembers.forEach(member => {
