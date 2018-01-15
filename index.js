@@ -103,7 +103,7 @@ bot.on("message", function(message) {
   } else if (command == "!MARIA") {
     game.maria(message);
   } else if (command == "!CLEAR") {
-    mod.clear(message);
+    mod.clear(message, Discord, bot);
   }
 });
 
