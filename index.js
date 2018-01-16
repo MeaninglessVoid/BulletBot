@@ -120,9 +120,11 @@ bot.on("messageDelete", message => {
     .addField("Message ID", message.id, false)
     .addField("Message Author", message.author.username, false)
     .addField("Message Channel Name", message.channel.name, false)
-  if (message.content != "") {
-    embed.addField("Message Content", message.content, false);
-  }
+    message.edits.reverse().forEach(edit => {
+      if (edit.content != "") {
+        embed.addField("Message Content", edit.content, false);
+      }
+    })
   message.attachments.forEach(attachment => {
     embed.addField("Image URL", attachment.url);
   });
