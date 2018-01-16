@@ -46,7 +46,7 @@ module.exports = {
       .setFooter("This action was performed automatically")
       .setTimestamp();
     var pjson = require("../package.json");
-    embed.addField("Version", pjson.version, false);
+    embed.addField("Version", `v${pjson.version}`, false);
     embed.addField(
       "Github Repository",
       "https://github.com/MeaninglessVoid/BulletBot",
