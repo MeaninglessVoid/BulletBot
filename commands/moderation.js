@@ -79,6 +79,7 @@ module.exports = {
             })
             .catch(err => console.error(err));
         });
+        message.delete();
       }
     } else {
       message.reply("you don't have permissions to use this command!");
