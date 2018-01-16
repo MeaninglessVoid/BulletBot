@@ -60,10 +60,26 @@ module.exports = {
         message.reply("You may only delete 99 messages at a time!");
         return;
       }
-      message.channel
-        .fetchMessages({ limit: times + 1 })
-        .then(messages => message.channel.bulkDelete(messages))
-        .catch(err => console.error(err));
+
+      if (message.mentions.members.first() == undefined) {
+        message.channel
+          .fetchMessages({ limit: times + 1 })
+          .then(messages => message.channel.bulkDelete(messages, true))
+          .catch(err => console.error(err));
+      } else {
+        var userMessages;
+        message.mentions.members.forEach(member => {
+          message.channel
+            .fetchMessages({ limit: 100 })
+            .then(messages => {
+              userMessages = messages.filter(
+                message => member.id == message.member.id
+              );
+              message.channel.bulkDelete(userMessages.first(times), true);
+            })
+            .catch(err => console.error(err));
+        });
+      }
     } else {
       message.reply("you don't have permissions to use this command!");
     }
