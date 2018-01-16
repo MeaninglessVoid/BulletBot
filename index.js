@@ -15,7 +15,7 @@ let timedOutMembers = [];
 
 bot.on("ready", function() {
   console.log("Bot is ready!");
-  bot.user.setActivity("use !help");
+  bot.user.setActivity("all of Barry's videos", {type: "WATCHING"});
   bot.guilds
     .first()
     .roles.get("361164004682366977")
