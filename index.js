@@ -15,7 +15,7 @@ let timedOutMembers = [];
 
 bot.on("ready", function() {
   console.log("Bot is ready!");
-  bot.user.setActivity("all of Barry's videos", {type: "WATCHING"});
+  bot.user.setActivity("all of Barry's videos", { type: "WATCHING" });
   bot.guilds
     .first()
     .roles.get("361164004682366977")
@@ -110,35 +110,35 @@ bot.on("message", function(message) {
 bot.on("messageDelete", message => {
   if (message.author.bot || message.content.startsWith("!")) return;
   try {
-  var embed = new Discord.RichEmbed()
-    .setAuthor("Deleted Message", message.author.displayAvatarURL)
-    .setThumbnail(message.author.displayAvatarURL)
-    .setColor("#9400ff")
-    .setTimestamp()
-    .addField("Message Author ID", message.author.id, false)
-    .addField("Message Channel ID", message.channel.id, false)
-    .addField("Message ID", message.id, false)
-    .addField("Message Author", message.author.username, false)
-    .addField("Message Channel Name", message.channel.name, false)
+    var embed = new Discord.RichEmbed()
+      .setAuthor("Deleted Message", message.author.displayAvatarURL)
+      .setThumbnail(message.author.displayAvatarURL)
+      .setColor("#9400ff")
+      .setTimestamp()
+      .addField("Message Author ID", message.author.id, false)
+      .addField("Message Channel ID", message.channel.id, false)
+      .addField("Message ID", message.id, false)
+      .addField("Message Author", message.author.username, false)
+      .addField("Message Channel Name", message.channel.name, false);
     message.edits.reverse().forEach(edit => {
       if (edit.content != "") {
         embed.addField("Message Content", edit.content, false);
       }
-    })
-  message.attachments.forEach(attachment => {
-    embed.addField("Image URL", attachment.url);
-  });
-  bot.guilds
-    .first()
-    .channels.get("402246491445657610")
-    .send({
-      embed
-    })
-    .catch(err => {
-      conosle.error(err);
     });
+    message.attachments.forEach(attachment => {
+      embed.addField("Image URL", attachment.url);
+    });
+    bot.guilds
+      .first()
+      .channels.get("402246491445657610")
+      .send({
+        embed
+      })
+      .catch(err => {
+        conosle.error(err);
+      });
   } catch (error) {
-    console.error(error)
+    console.error(error);
     bot.guilds
       .first()
       .channels.get("402246491445657610")
