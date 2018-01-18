@@ -48,6 +48,7 @@ bot.on("message", function(message) {
 
   var isTest = false;
   if (
+    message.channel.id == "388877963694964747" ||
     message.author.id == "340002869912666114" ||
     message.author.id == "326437722120126485" ||
     message.author.id == "148847883632902151"
