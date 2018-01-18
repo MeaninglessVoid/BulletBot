@@ -93,7 +93,7 @@ bot.on("message", function(message) {
   } else if (command == "!INVITE" || command == "!INV") {
     basic.invite(message);
   } else if (command == "!SHUTDOWN") {
-    mod.shutdown(message, bot);
+    mod.shutdown(message, bot, isTest);
   } else if (command == "!VC") {
     game.vc(message);
   } else if (command == "!GIVEAWAY") {
@@ -103,7 +103,7 @@ bot.on("message", function(message) {
   } else if (command == "!MARIA") {
     game.maria(message);
   } else if (command == "!CLEAR") {
-    mod.clear(message, Discord, bot);
+    mod.clear(message, Discord, bot, isTest);
   }
 });
 

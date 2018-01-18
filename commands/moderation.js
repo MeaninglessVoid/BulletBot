@@ -1,19 +1,18 @@
 const gaming = require("./gaming");
 
 module.exports = {
-  shutdown: function(message, bot) {
+  shutdown: function(message, bot, isTest) {
     var owner = message.guild.roles.get("306234174321328129");
     var dungeonMaster = message.guild.roles.get("368484031458705409");
     var secretServices = message.guild.roles.get("388167285077966859");
     var headAdmin = message.guild.roles.get("354392788424589342");
-    var isVoid = message.guild.members.get("340002869912666114");
 
     if (
       message.member.roles.has(owner.id) ||
       message.member.roles.has(dungeonMaster.id) ||
       message.member.roles.has(secretServices.id) ||
       message.member.roles.has(headAdmin.id) ||
-      message.author.id == isVoid.id
+      isTest
     ) {
       gaming.channels.forEach(channelId => {
         message.guild.channels
@@ -34,19 +33,17 @@ module.exports = {
       });
     }
   },
-  clear: function(message, Discord, bot) {
+  clear: function(message, Discord, bot, isTest) {
     var headAdmin = message.guild.roles.get("354392788424589342");
     var admin = message.guild.roles.get("322941932848283662");
     var mod = message.guild.roles.get("306234269435691008");
     // var helper = message.guild.roles.get("385995809461764096");
-    var isVoid = message.guild.members.get("340002869912666114");
 
     if (
       message.member.roles.has(headAdmin.id) ||
       message.member.roles.has(admin.id) ||
       message.member.roles.has(mod.id) ||
-      // message.member.roles.has(helper.id) ||
-      message.author.id == isVoid.id
+      isTest
     ) {
       let argsL = message.content.split(" ").slice(1);
 
