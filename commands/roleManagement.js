@@ -52,14 +52,14 @@ module.exports = {
         .send(
           "You do not have the permission to have that role, or it doesn't exist."
         )
-        .catch(err => console.error(err));
+        .catch(console.error);
       message.delete();
       return;
     }
 
-    message.member.addRole(roleWant, "Bot added role by request").catch(err => {
-      console.error(err);
-    });
+    message.member
+      .addRole(roleWant, "Bot added role by request")
+      .catch(console.error);
 
     message.delete();
   },
@@ -76,9 +76,7 @@ module.exports = {
     });
 
     if (!allowedToRemove) {
-      message.author
-        .send("You don't have this role!")
-        .catch(err => console.error(err));
+      message.author.send("You don't have this role!").catch(console.error);
       message.delete();
       return;
     }
@@ -100,15 +98,13 @@ module.exports = {
         .send(
           "You do not have permission to remove that role, or it doesn't exist"
         )
-        .catch(err => console.error(err));
+        .catch(console.error);
       return;
     }
 
     message.member
       .removeRole(roleWant, "Bot removed role by request")
-      .catch(err => {
-        console.error(err);
-      });
+      .catch(console.error);
 
     message.delete();
   }

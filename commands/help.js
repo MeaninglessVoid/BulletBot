@@ -40,9 +40,7 @@ module.exports = {
       .send({
         embed
       })
-      .catch(err => {
-        conosle.error(err);
-      });
+      .catch(console.error);
     message.delete();
   }
 };

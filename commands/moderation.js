@@ -18,19 +18,13 @@ module.exports = {
         message.guild.channels
           .get(channelId.id)
           .delete()
-          .catch(err => {
-            console.error(err);
-          });
+          .catch(console.error);
         gaming.channels.shift();
       });
 
       message.author.send("Shutting down");
-      message.delete().catch(err => {
-        console.error(err);
-      });
-      bot.destroy().catch(err => {
-        console.error(err);
-      });
+      message.delete().catch(console.error);
+      bot.destroy().catch(console.error);
     }
   },
   clear: function(message, Discord, bot, isTest) {
@@ -62,7 +56,7 @@ module.exports = {
         message.channel
           .fetchMessages({ limit: times + 1 })
           .then(messages => message.channel.bulkDelete(messages, true))
-          .catch(err => console.error(err));
+          .catch(console.error);
       } else {
         var userMessages;
         message.mentions.members.forEach(member => {
@@ -74,7 +68,7 @@ module.exports = {
               );
               message.channel.bulkDelete(userMessages.first(times), true);
             })
-            .catch(err => console.error(err));
+            .catch(console.error);
         });
         message.delete();
       }

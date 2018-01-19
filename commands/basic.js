@@ -34,7 +34,7 @@ module.exports = {
       .first()
       .members.get("208801766496534528")
       .send({ embed })
-      .catch(err => console.error(err));
+      .catch(console.error);
 
     message.delete();
   },
@@ -47,13 +47,17 @@ module.exports = {
       .setTimestamp();
     var pjson = require("../package.json");
     embed.addField("Version", `v${pjson.version}`, false);
-    embed.addField("Bot Developers", "<@340002869912666114> <@192137039167094784>", false);
+    embed.addField(
+      "Bot Developers",
+      "<@340002869912666114> <@192137039167094784>",
+      false
+    );
     embed.addField(
       "Github Repository",
       "https://github.com/MeaninglessVoid/BulletBot",
       false
     );
 
-    message.channel.send({ embed }).catch(err => console.error(err));
+    message.channel.send({ embed }).catch(console.error);
   }
 };

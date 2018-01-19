@@ -135,9 +135,7 @@ bot.on("messageDelete", message => {
       .send({
         embed
       })
-      .catch(err => {
-        conosle.error(err);
-      });
+      .catch(console.error);
   } catch (error) {
     console.error(error);
     bot.guilds
@@ -225,4 +223,4 @@ bot.on("voiceStateUpdate", function(oldMember, newMember) {
 
 bot.on("error", console.error);
 
-bot.login(token.botToken).catch(err => console.error(err));
+bot.login(token.botToken).catch(console.error);
