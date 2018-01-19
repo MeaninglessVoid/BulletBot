@@ -223,4 +223,6 @@ bot.on("voiceStateUpdate", function(oldMember, newMember) {
   });
 });
 
+bot.on("error", console.error);
+
 bot.login(token.botToken).catch(err => console.error(err));
