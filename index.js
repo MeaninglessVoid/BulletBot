@@ -123,7 +123,11 @@ bot.on("messageDelete", message => {
       .addField("Message Channel Name", message.channel.name, false);
     message.edits.reverse().forEach(edit => {
       if (edit.content != "") {
-        embed.addField("Message Content", edit.content, false);
+        if (message.content.length <= 1024) {
+          embed.addField("Message Content", edit.content, false);
+        } else {
+          embed.addField("Message Content", "This message was too long to be displayed", false);
+        }
       }
     });
     message.attachments.forEach(attachment => {
