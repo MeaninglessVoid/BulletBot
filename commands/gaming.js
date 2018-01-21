@@ -58,7 +58,7 @@ module.exports = {
 
     var userLimit = parseInt(argsL[0]);
 
-    if (isNaN(userLimit)) userLimit = 99;
+    if (isNaN(userLimit) || userLimit > 99) userLimit = 99;
 
     message.guild.createChannel(game, "voice").then(channel => {
       channel.overwritePermissions(
