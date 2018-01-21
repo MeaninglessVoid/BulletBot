@@ -22,24 +22,20 @@ module.exports = {
     message.guild
       .createChannel(game, "voice", [
         {
-          id: "306234601817505793",
+          id: message.guild.roles.get("306234601817505793"),
           allow: ["VIEW_CHANNEL", "CONNECT", "SPEAK"]
         }
       ])
       .then(channel => {
         channel.setParent("358347251900350464");
+        channel.setUserLimit(userLimit);
+        channels.push({
+          id: channel.id,
+          owner: message.author.id
+        });
+        message.member.setVoiceChannel(channel);
       })
       .catch(console.error);
-
-    setTimeout(function() {
-      var createChannel = message.guild.channels.find("name", game);
-      createChannel.setUserLimit(userLimit);
-      message.member.setVoiceChannel(createChannel);
-      channels.push({
-        id: createChannel.id,
-        owner: message.author.id
-      });
-    }, 1000);
   },
   maria: function(message) {
     if (
@@ -62,22 +58,19 @@ module.exports = {
     message.guild
       .createChannel(game, "voice", [
         {
-          id: "306234601817505793",
+          id: message.guild.roles.get("306234601817505793"),
           allow: ["VIEW_CHANNEL", "CONNECT", "SPEAK"]
         }
       ])
       .then(channel => {
         channel.setParent("358347251900350464");
+        channel.setUserLimit(userLimit);
+        channels.push({
+          id: channel.id,
+          owner: message.author.id
+        });
+        message.member.setVoiceChannel(channel);
       })
       .catch(console.error);
-
-    setTimeout(function() {
-      var createChannel = message.guild.channels.find("name", game);
-      createChannel.setUserLimit(userLimit);
-      channels.push({
-        id: createChannel.id,
-        owner: message.author.id
-      });
-    }, 1000);
   }
 };
