@@ -19,20 +19,20 @@ module.exports = {
 
     if (isNaN(userLimit) || userLimit > 99) userLimit = 99;
 
-    message.guild.createChannel(game, "voice").then(channel => {
-      channel.overwritePermissions(
-        message.guild.roles.get("306234601817505793"),
+    message.guild
+      .createChannel(game, "voice", [
         {
-          VIEW_CHANNEL: true,
-          CONNECT: true,
-          SPEAK: true
+          id: "306234601817505793",
+          allow: ["VIEW_CHANNEL", "CONNECT", "SPEAK"]
         }
-      );
-    });
+      ])
+      .then(channel => {
+        channel.setParent("358347251900350464");
+      })
+      .catch(console.error);
 
     setTimeout(function() {
       var createChannel = message.guild.channels.find("name", game);
-      createChannel.setParent(message.guild.channels.get("358347251900350464"));
       createChannel.setUserLimit(userLimit);
       message.member.setVoiceChannel(createChannel);
       channels.push({
@@ -42,7 +42,6 @@ module.exports = {
     }, 1000);
   },
   maria: function(message) {
-    
     if (
       message.author.id != "148847883632902151" &&
       message.author.id != "340002869912666114"
@@ -51,7 +50,7 @@ module.exports = {
     }
 
     message.delete();
-    
+
     game = `🎮 ${message.author.username}'s Gaming Channel`;
 
     let argsL = message.content.split(" ").slice(1);
@@ -60,20 +59,20 @@ module.exports = {
 
     if (isNaN(userLimit) || userLimit > 99) userLimit = 99;
 
-    message.guild.createChannel(game, "voice").then(channel => {
-      channel.overwritePermissions(
-        message.guild.roles.get("306234601817505793"),
+    message.guild
+      .createChannel(game, "voice", [
         {
-          VIEW_CHANNEL: true,
-          CONNECT: true,
-          SPEAK: true
+          id: "306234601817505793",
+          allow: ["VIEW_CHANNEL", "CONNECT", "SPEAK"]
         }
-      );
-    });
+      ])
+      .then(channel => {
+        channel.setParent("358347251900350464");
+      })
+      .catch(console.error);
 
     setTimeout(function() {
       var createChannel = message.guild.channels.find("name", game);
-      createChannel.setParent(message.guild.channels.get("358347251900350464"));
       createChannel.setUserLimit(userLimit);
       channels.push({
         id: createChannel.id,
