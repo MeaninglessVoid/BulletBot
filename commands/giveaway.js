@@ -74,6 +74,16 @@ module.exports = {
 
         winners.push(winner.id);
       } else if (argsL[0].toLowerCase() == "end") {
+        var giveawayCat = message.guild.channels.find(
+          "name",
+          "🎉 • Giveaway •"
+        );
+
+        giveawayCat.children.forEach(channel =>
+          channel.delete().catch(console.error)
+        );
+
+        giveawayCat.delete().catch(console.error);
       }
     } else {
       message.reply("You don't have permission to use this command.");
@@ -81,28 +91,3 @@ module.exports = {
     message.delete();
   }
 };
-
-// module.exports = {
-//   winners: (winners = []),
-//   giveaway: function(message) {
-//     var owner = message.guild.roles.get("306234174321328129");
-//     if (
-//       message.member.roles.has(owner.id) ||
-//       message.author.id == "340002869912666114"
-//     ) {
-//       let argsL = message.content.split(" ").slice(1);
-//       if (argsL[0] == undefined) {
-//       } else if (argsL[0].toLowerCase() == "start") {
-//       } else if (argsL[0].toLowerCase() == "choose") {
-//       } else if (argsL[0].toLowerCase() == "end") {
-//         message.guild.channels.find("name", "🎉 GIVEAWAY!").delete();
-//         message.guild.channels.find("name", "Giveaway Entry!").delete();
-//         message.guild.channels.find("name", "Giveaway Winners!").delete();
-//         winners = [];
-//       }
-//     } else {
-//       message.reply("You don't have permission to use this command.");
-//     }
-//     message.delete();
-//   }
-// };
