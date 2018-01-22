@@ -1,6 +1,6 @@
 module.exports = {
   winners: (winners = []),
-  giveaway: function(message) {
+  giveaway: function(message, Discord) {
     message.reply(
       "This command is being rewritten, please refrain from using it"
     );
@@ -10,6 +10,23 @@ module.exports = {
     // ) {
     //   let argsL = message.content.split(" ").slice(1);
     //   if (argsL[0] == undefined) {
+    //     var embed = new Discord.RichEmbed()
+    //       .setAuthor("Giveaway Help", message.author.displayAvatarURL)
+    //       .setColor("#9400ff")
+    //       .setThumbnail(bot.user.displayAvatarURL)
+    //       .setTimestamp()
+    //       .addField(
+    //         "!giveaway start",
+    //         "This command will start a new giveaway, and create the necessary channels!"
+    //       )
+    //       .addField(
+    //         "!giveaway choose",
+    //         "This command will choose a winner, and add them to the winner vc!"
+    //       )
+    //       .addField(
+    //         "!giveaway end",
+    //         "This command will end the giveaway and delete all the channels!"
+    //       );
     //   } else if (argsL[0].toLowerCase() == "start") {
     //   } else if (argsL[0].toLowerCase() == "choose") {
     //   } else if (argsL[0].toLowerCase() == "end") {

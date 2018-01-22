@@ -98,7 +98,7 @@ bot.on("message", function(message) {
   } else if (command == "!VC") {
     game.vc(message);
   } else if (command == "!GIVEAWAY") {
-    giveaway.giveaway(message);
+    giveaway.giveaway(message, Discord);
   } else if (command == "!REQUEST") {
     basic.request(message, bot, Discord);
   } else if (command == "!MARIA") {
