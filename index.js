@@ -13,7 +13,7 @@ const giveaway = require("./commands/giveaway");
 
 let timedOutMembers = [];
 
-bot.on("ready", function() {
+bot.on("ready", () => {
   console.log("Bot is ready!");
   bot.user.setActivity("all of Barry's videos", { type: "WATCHING" });
   bot.guilds
@@ -24,7 +24,7 @@ bot.on("ready", function() {
     });
 });
 
-bot.on("message", function(message) {
+bot.on("message", (message) => {
   if (message.author.bot || !message.content.startsWith("!")) return;
 
   if (message.channel.type == "dm") {
@@ -181,7 +181,7 @@ bot.on("guildMemberAdd", guildMember => {
   });
 });
 
-bot.on("guildMemberUpdate", function(oldMember, newMember) {
+bot.on("guildMemberUpdate", (oldMember, newMember) => {
   var timeout = bot.guilds.first().roles.get("361164004682366977");
   var member = bot.guilds.first().roles.get("306234601817505793");
 
@@ -205,10 +205,10 @@ bot.on("guildMemberUpdate", function(oldMember, newMember) {
   }
 });
 
-bot.on("voiceStateUpdate", function(oldMember, newMember) {
+bot.on("voiceStateUpdate", (oldMember, newMember) => {
   if (!oldMember.serverMute && newMember.serverMute) {
     var muted = bot.guilds.first().members.get(oldMember.id);
-    setTimeout(function() {
+    setTimeout(() => {
       muted.setMute(false);
     }, 1800000);
   }
