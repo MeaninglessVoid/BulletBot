@@ -1,10 +1,6 @@
 module.exports = {
   winners: (winners = []),
   giveaway: function(message, Discord) {
-    message.reply(
-      "This command is being rewritten, please refrain from using it"
-    );
-    return; //remove this later
     if (
       message.member.roles.has("306234174321328129") || //check if owner
       message.author.id == "340002869912666114" //check if void
