@@ -3,13 +3,13 @@ const token = require("./token.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
-const roles = require("./commands/roleManagement");
-const ui = require("./commands/userInfo");
-const mod = require("./commands/moderation");
 const basic = require("./commands/basic");
 const help = require("./commands/help");
+const roles = require("./commands/roleManagement");
+const ui = require("./commands/userInfo");
 const game = require("./commands/gaming");
 const giveaway = require("./commands/giveaway");
+const mod = require("./commands/moderation");
 
 let timedOutMembers = [];
 
