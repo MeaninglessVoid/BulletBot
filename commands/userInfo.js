@@ -37,7 +37,7 @@ module.exports = {
           }
         });
     } else {
-      message.mentions.members.forEach((person) => {
+      message.mentions.members.forEach(person => {
         var nick = person.nickname;
         var role = person.highestRole;
 

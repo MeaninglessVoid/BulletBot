@@ -24,7 +24,7 @@ bot.on("ready", () => {
     });
 });
 
-bot.on("message", (message) => {
+bot.on("message", message => {
   if (message.author.bot || !message.content.startsWith("!")) return;
 
   if (message.channel.type == "dm") {

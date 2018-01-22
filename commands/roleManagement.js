@@ -40,7 +40,7 @@ module.exports = {
 
     var roleWant = argsL.join(" ").toLowerCase();
 
-    allowedRoles.forEach((role) => {
+    allowedRoles.forEach(role => {
       if (roleWant == message.guild.roles.get(role).name.toLowerCase()) {
         allowedToHave = true;
         roleWant = message.guild.roles.get(role);
@@ -69,7 +69,7 @@ module.exports = {
     allowedToRemove = false;
     var roleWant;
 
-    message.member.roles.forEach((role) => {
+    message.member.roles.forEach(role => {
       if (argsL.join(" ").toLowerCase() == role.name.toLowerCase()) {
         allowedToRemove = true;
       }
@@ -83,7 +83,7 @@ module.exports = {
 
     allowedToRemove = false;
 
-    allowedRoles.forEach((role) => {
+    allowedRoles.forEach(role => {
       if (
         message.guild.roles.get(role).name.toLowerCase() ==
         argsL.join(" ").toLowerCase()
