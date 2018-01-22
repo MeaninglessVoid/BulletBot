@@ -29,12 +29,42 @@ module.exports = {
             "This command will end the giveaway and delete all the channels!"
           );
       } else if (argsL[0].toLowerCase() == "start") {
-        message.guild.createChannel("🎉 • Giveaway •", "category", [
-          {
-            id: message.guild.roles.get("306234601817505793"),
-            allow: ["VIEW_CHANNEL", "CONNECT", "SPEAK"],
-          }
-        ]);
+        message.guild
+          .createChannel("🎉 • Giveaway •", "category", [
+            {
+              id: message.guild.roles.get("306234601817505793"),
+              allow: ["VIEW_CHANNEL", "CONNECT", "SPEAK"]
+            }
+          ])
+          .then(channel => channel.setPosition(0))
+          .catch(console.error);
+
+        var giveawayCategory = message.guild.channels.find(
+          "name",
+          "🎉 • Giveaway •"
+        );
+
+        message.guild
+          .createChannel("Giveaway Entry", "voice", [
+            {
+              id: message.guild.roles.get("306234601817505793"),
+              allow: ["VIEW_CHANNEL", "CONNECT"],
+              deny: ["SPEAK"]
+            }
+          ])
+          .then(channel => channel.setParent(giveawayCategory))
+          .catch(console.error);
+
+        message.guild
+          .createChannel("Giveaway Winners", "voice", [
+            {
+              id: message.guild.roles.get("306234601817505793"),
+              allow: ["VIEW_CHANNEL", "SPEAK"],
+              deny: ["CONNECT"]
+            }
+          ])
+          .then(channel => channel.setParent(giveawayCategory))
+          .catch(console.error);
       } else if (argsL[0].toLowerCase() == "choose") {
       } else if (argsL[0].toLowerCase() == "end") {
       }
