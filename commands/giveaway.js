@@ -66,6 +66,13 @@ module.exports = {
           .then(channel => channel.setParent(giveawayCategory))
           .catch(console.error);
       } else if (argsL[0].toLowerCase() == "choose") {
+        var channelPool = message.guild.channels.find("name", "Giveaway Entry");
+
+        var winner = channelPool.members.random();
+
+        winner.setVoiceChannel(channelPool);
+
+        winners.push(winner.id);
       } else if (argsL[0].toLowerCase() == "end") {
       }
     } else {
@@ -87,15 +94,6 @@ module.exports = {
 //       if (argsL[0] == undefined) {
 //       } else if (argsL[0].toLowerCase() == "start") {
 //       } else if (argsL[0].toLowerCase() == "choose") {
-//         var winner = message.guild.channels
-//           .find("name", "Giveaway Entry!")
-//           .members.random(1)[0];
-
-//         winner.setVoiceChannel(
-//           message.guild.channels.find("name", "Giveaway Winners!")
-//         );
-
-//         winners.push(winner.id);
 //       } else if (argsL[0].toLowerCase() == "end") {
 //         message.guild.channels.find("name", "🎉 GIVEAWAY!").delete();
 //         message.guild.channels.find("name", "Giveaway Entry!").delete();
