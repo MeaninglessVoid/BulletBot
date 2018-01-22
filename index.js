@@ -109,12 +109,29 @@ bot.on("message", function(message) {
 });
 
 bot.on("messageDelete", message => {
+  if (message.author.bot && message.channel.id == "402246491445657610") {
+    var embed = new Discord.RichEmbed()
+      .setAuthor("Warning", message.author.displayAvatarURL)
+      .setColor("#990000")
+      .setTimestamp()
+      .addField(
+        "Bot Message Deletion",
+        "A user has deleted a message in this channel",
+        false
+      );
+    bot.guilds
+      .first()
+      .channels.get("402246491445657610")
+      .send({ embed })
+      .catch(console.error());
+  }
+
   if (message.author.bot || message.content.startsWith("!")) return;
   try {
     var embed = new Discord.RichEmbed()
       .setAuthor("Deleted Message", message.author.displayAvatarURL)
       .setThumbnail(message.author.displayAvatarURL)
-      .setColor("#9400ff")
+      .setColor("#0000ff")
       .setTimestamp()
       .addField("Message Author ID", message.author.id, false)
       .addField("Message Channel ID", message.channel.id, false)
@@ -126,7 +143,11 @@ bot.on("messageDelete", message => {
         if (message.content.length <= 1024) {
           embed.addField("Message Content", edit.content, false);
         } else {
-          embed.addField("Message Content", "This message was too long to be displayed", false);
+          embed.addField(
+            "Message Content",
+            "This message was too long to be displayed",
+            false
+          );
         }
       }
     });
