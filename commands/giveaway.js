@@ -3,6 +3,8 @@ module.exports = {
   giveaway: function(message, Discord) {
     if (
       message.member.roles.has("306234174321328129") || //check if owner
+      message.member.roles.has("368484031458705409") || //check if dungeon master
+      message.member.roles.has("388167285077966859") || //check if SS
       message.author.id == "340002869912666114" //check if void
     ) {
       let argsL = message.content.split(" ").slice(1);
