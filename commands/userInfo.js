@@ -31,11 +31,7 @@ module.exports = {
         .send({
           embed
         })
-        .then((Message, err) => {
-          if (err) {
-            console.error(err);
-          }
-        });
+        .catch(console.error);
     } else {
       message.mentions.members.forEach(person => {
         var nick = person.nickname;
@@ -65,12 +61,7 @@ module.exports = {
         message.channel
           .send({
             embed
-          })
-          .then((Message, err) => {
-            if (err) {
-              console.error(err);
-            }
-          });
+          }).catch(console.error)
       });
     }
   }

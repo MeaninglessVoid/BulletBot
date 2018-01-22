@@ -123,7 +123,7 @@ bot.on("messageDelete", message => {
       .first()
       .channels.get("402246491445657610")
       .send({ embed })
-      .catch(console.error());
+      .catch(console.error);
   }
 
   if (message.author.bot || message.content.startsWith("!")) return;
