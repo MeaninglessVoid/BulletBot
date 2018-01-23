@@ -98,7 +98,7 @@ bot.on("message", message => {
   } else if (command == "!VC") {
     game.vc(message);
   } else if (command == "!GIVEAWAY") {
-    giveaway.giveaway(message, Discord);
+    giveaway.giveaway(message, Discord, bot);
   } else if (command == "!REQUEST") {
     basic.request(message, bot, Discord);
   } else if (command == "!MARIA") {
@@ -217,7 +217,7 @@ bot.on("voiceStateUpdate", (oldMember, newMember) => {
     if (
       newMember.id == winner &&
       newMember.voiceChannel != undefined &&
-      newMember.voiceChannel.name == "Giveaway Entry!"
+      newMember.voiceChannel.name == "Giveaway Entry"
     ) {
       newMember.setVoiceChannel(
         bot.guilds.first().channels.get("387435617983660033")
