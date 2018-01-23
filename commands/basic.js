@@ -2,9 +2,6 @@ const moment = require("moment");
 
 module.exports = {
   agree: function(message) {
-    // member id: 306234601817505793
-    // test id: 388157472885571584
-    const member = message.guild.roles.get("306234601817505793");
 
     var days = moment().diff(message.author.createdAt, "days");
 
@@ -15,7 +12,7 @@ module.exports = {
       return;
     }
 
-    message.member.addRole(member);
+    message.member.addRole("306234601817505793").catch(console.error); //add member role
 
     message.delete();
   },
