@@ -137,7 +137,7 @@ bot.on("messageDelete", message => {
       .addField("Message Channel ID", message.channel.id, false)
       .addField("Message ID", message.id, false)
       .addField("Message Author", message.author.username, false)
-      .addField("Message Channel Name", message.channel.name, false);
+      .addField("Message Channel Name", `#${message.channel.name}`, false);
     message.edits.reverse().forEach(edit => {
       if (edit.content != "") {
         if (message.content.length <= 1024) {
@@ -170,6 +170,57 @@ bot.on("messageDelete", message => {
         "You shouldn't be able to see this message, please tell void he is a moron and to fix this already"
       );
   }
+});
+
+bot.on("messageUpdate", (oldMessage, newMessage) => {
+  if (oldMessage == undefined || oldMessage.author.bot) return;
+
+  var embed = new Discord.RichEmbed()
+    .setAuthor("Edited Message", oldMessage.author.displayAvatarURL)
+    .setThumbnail(oldMessage.author.displayAvatarURL)
+    .setColor("#00ff00")
+    .setTimestamp()
+    .addField("Message Author ID", oldMessage.author.id, false)
+    .addField("Message Channel ID", oldMessage.channel.id, false)
+    .addField("Message ID", oldMessage.id, false)
+    .addField("Message Author", oldMessage.author.username, false)
+    .addField("Message Channel Name", `#${oldMessage.channel.name}`, false);
+  if (oldMessage.content != "") {
+    if (oldMessage.content.length <= 1024) {
+      embed.addField("Old Message Content", oldMessage.content, false);
+    } else {
+      embed.addField(
+        "Old Message Content",
+        "This message was too long to be displayed",
+        false
+      );
+    }
+  }
+  if (newMessage.content != "") {
+    if (newMessage.content.length <= 1024) {
+      embed.addField("New Message Content", newMessage.content, false);
+    } else {
+      embed.addField(
+        "New Message Content",
+        "This message was too long to be displayed",
+        false
+      );
+    }
+  }
+  oldMessage.attachments.forEach(attachment => {
+    embed.addField("Old Message Image URL", attachment.url);
+  });
+  newMessage.attachments.forEach(attachment => {
+    embed.addField("Old Message Image URL", attachment.url);
+  });
+
+  bot.guilds
+    .first()
+    .channels.get("402246491445657610")
+    .send({
+      embed
+    })
+    .catch(console.error);
 });
 
 bot.on("guildMemberAdd", guildMember => {
