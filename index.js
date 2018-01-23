@@ -173,7 +173,12 @@ bot.on("messageDelete", message => {
 });
 
 bot.on("messageUpdate", (oldMessage, newMessage) => {
-  if (oldMessage == undefined || oldMessage.author.bot) return;
+  if (
+    oldMessage == undefined ||
+    oldMessage.author.bot ||
+    newMessage.edits.length < 2
+  )
+    return;
 
   var embed = new Discord.RichEmbed()
     .setAuthor("Edited Message", oldMessage.author.displayAvatarURL)
