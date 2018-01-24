@@ -93,6 +93,8 @@ module.exports = {
       var game = argsL.join(" ");
 
       bot.user.setActivity(game, { type: "PLAYING" });
+
+      message.delete().catch(console.error)
     }
   }
 };
