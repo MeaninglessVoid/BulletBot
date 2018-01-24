@@ -7,7 +7,7 @@ module.exports = {
       message.member.roles.has("388167285077966859") || //check if SS
       message.author.id == "340002869912666114" //check if void
     ) {
-      let argsL = message.content.split(" ").slice(1);
+      let argsL = message.content.split(" ").shift();
       if (argsL[0] == undefined) {
         var embed = new Discord.RichEmbed()
           .setAuthor("Giveaway Help", message.author.displayAvatarURL)

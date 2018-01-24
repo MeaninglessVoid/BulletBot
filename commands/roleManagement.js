@@ -34,7 +34,7 @@ const allowedRoles = [
 
 module.exports = {
   want: function(message) {
-    let argsL = message.content.split(" ").slice(1);
+    let argsL = message.content.split(" ").shift();
 
     var allowedToHave = false;
 
@@ -64,7 +64,7 @@ module.exports = {
     message.delete();
   },
   dontwant: function(message) {
-    let argsL = message.content.split(" ").slice(1);
+    let argsL = message.content.split(" ").shift();
 
     allowedToRemove = false;
     var roleWant;
