@@ -5,10 +5,13 @@ module.exports = {
     if (person == undefined) {
       var nick = message.member.nickname;
       var role = message.member.highestRole;
+      var roleColor = message.member.displayHexColor;
+
+      if(roleColor == "#000000") roleColor = "#99aab5";
 
       var embed = new Discord.RichEmbed()
         .setAuthor("User Info", message.author.displayAvatarURL)
-        .setColor(message.member.displayHexColor)
+        .setColor(roleColor)
         .setThumbnail(message.author.displayAvatarURL)
         .setFooter("This action was performed automatically")
         .setTimestamp()
@@ -36,10 +39,13 @@ module.exports = {
       message.mentions.members.forEach(person => {
         var nick = person.nickname;
         var role = person.highestRole;
-
+        var roleColor = person.displayHexColor;
+  
+        if(roleColor == "#000000") roleColor = "#99aab5";
+        
         var embed = new Discord.RichEmbed()
           .setAuthor("User Info", person.user.displayAvatarURL)
-          .setColor(person.displayHexColor)
+          .setColor(roleColor``)
           .setThumbnail(person.user.displayAvatarURL)
           .setFooter("This action was performed automatically")
           .setTimestamp()
