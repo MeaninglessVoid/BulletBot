@@ -14,7 +14,13 @@ const mod = require("./commands/moderation");
 let timedOutMembers = [];
 
 bot.on("ready", () => {
-  console.log("Bot is ready!");
+  console.log("Ready");
+  bot.channels
+    .get("358341168066723845")
+    .send(
+      `${bot.guilds.first().roles.get("354392788424589342")} I have restarted`
+    )
+    .catch(console.error);
   bot.user.setActivity("all of Barry's videos", { type: "WATCHING" });
   bot.guilds
     .first()
@@ -106,13 +112,13 @@ bot.on("message", message => {
   } else if (command == "!CLEAR") {
     mod.clear(message, Discord, bot, isTest);
   } else if (command == "!PLAYING") {
-    mod.playing(message, bot, isTest)
+    mod.playing(message, bot, isTest);
   } else if (command == "!WATCHING") {
-    mod.watching(message, bot, isTest)
+    mod.watching(message, bot, isTest);
   } else if (command == "!LISTENING") {
-    mod.listening(message, bot, isTest)
+    mod.listening(message, bot, isTest);
   } else if (command == "!STREAMING") {
-    mod.streaming(message, bot, isTest)
+    mod.streaming(message, bot, isTest);
   }
 });
 
