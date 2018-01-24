@@ -45,7 +45,7 @@ module.exports = {
         
         var embed = new Discord.RichEmbed()
           .setAuthor("User Info", person.user.displayAvatarURL)
-          .setColor(roleColor``)
+          .setColor(roleColor)
           .setThumbnail(person.user.displayAvatarURL)
           .setFooter("This action was performed automatically")
           .setTimestamp()
