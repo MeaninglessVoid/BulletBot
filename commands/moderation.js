@@ -19,7 +19,7 @@ module.exports = {
           .get(channelId.id)
           .delete()
           .catch(console.error);
-        gaming.channels.shift();
+        gaming.channels.splice(1);
       });
 
       message.author.send("Shutting down");
@@ -39,7 +39,7 @@ module.exports = {
       message.member.roles.has(mod.id) ||
       isTest
     ) {
-      let argsL = message.content.split(" ").shift();
+      let argsL = message.content.split(" ").splice(1);
 
       var times = parseInt(argsL[0]);
 
@@ -89,7 +89,7 @@ module.exports = {
       message.member.roles.has(headAdmin.id) ||
       isTest
     ) {
-      let argsL = message.content.split(" ").shift();
+      let argsL = message.content.split(" ").splice(1)
       var game = argsL.join(" ");
 
       bot.user.setActivity(game, { type: "PLAYING" });

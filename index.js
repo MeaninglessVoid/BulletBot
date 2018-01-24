@@ -301,7 +301,7 @@ bot.on("voiceStateUpdate", (oldMember, newMember) => {
       oldMember.id == channel.owner
     ) {
       oldMember.voiceChannel.delete();
-      game.channels.shift();
+      game.channels.splice(1);
     }
   });
 });

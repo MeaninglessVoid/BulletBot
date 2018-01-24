@@ -13,7 +13,7 @@ module.exports = {
 
     game = `🎮 ${message.author.username}'s Gaming Channel`;
 
-    let argsL = message.content.split(" ").shift();
+    let argsL = message.content.split(" ").splice(1);
 
     var userLimit = parseInt(argsL[0]);
 
@@ -49,7 +49,7 @@ module.exports = {
 
     game = `🎮 ${message.author.username}'s Gaming Channel`;
 
-    let argsL = message.content.split(" ").shift();
+    let argsL = message.content.split(" ").splice(1);
 
     var userLimit = parseInt(argsL[0]);
 
