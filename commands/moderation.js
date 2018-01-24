@@ -89,12 +89,12 @@ module.exports = {
       message.member.roles.has(headAdmin.id) ||
       isTest
     ) {
-      let argsL = message.content.split(" ").splice(1)
+      let argsL = message.content.split(" ").splice(1);
       var game = argsL.join(" ");
 
-      bot.user.setActivity(game, { type: "PLAYING" });
+      bot.user.setActivity(game, { type: "PLAYING" }).catch(console.error);
 
-      message.delete().catch(console.error)
+      message.delete().catch(console.error);
     }
   },
   watching: function(message, bot, isTest) {
@@ -110,12 +110,12 @@ module.exports = {
       message.member.roles.has(headAdmin.id) ||
       isTest
     ) {
-      let argsL = message.content.split(" ").splice(1)
+      let argsL = message.content.split(" ").splice(1);
       var game = argsL.join(" ");
 
-      bot.user.setActivity(game, { type: "WATCHING" });
+      bot.user.setActivity(game, { type: "WATCHING" }).catch(console.error);
 
-      message.delete().catch(console.error)
+      message.delete().catch(console.error);
     }
   },
   listening: function(message, bot, isTest) {
@@ -131,12 +131,12 @@ module.exports = {
       message.member.roles.has(headAdmin.id) ||
       isTest
     ) {
-      let argsL = message.content.split(" ").splice(1)
+      let argsL = message.content.split(" ").splice(1);
       var game = argsL.join(" ");
 
-      bot.user.setActivity(game, { type: "LISTENING" });
+      bot.user.setActivity(game, { type: "LISTENING" }).catch(console.error);
 
-      message.delete().catch(console.error)
+      message.delete().catch(console.error);
     }
   },
   streaming: function(message, bot, isTest) {
@@ -152,12 +152,12 @@ module.exports = {
       message.member.roles.has(headAdmin.id) ||
       isTest
     ) {
-      let argsL = message.content.split(" ").splice(1)
+      let argsL = message.content.split(" ").splice(1);
       var game = argsL.join(" ");
 
-      bot.user.setActivity(game, { type: "STREAMING" });
+      bot.user.setActivity(game, { type: "STREAMING" }).catch(console.error);
 
-      message.delete().catch(console.error)
+      message.delete().catch(console.error);
     }
   }
 };
