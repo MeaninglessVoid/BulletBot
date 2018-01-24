@@ -8,7 +8,7 @@ module.exports = {
 
       var embed = new Discord.RichEmbed()
         .setAuthor("User Info", message.author.displayAvatarURL)
-        .setColor("#9400ff")
+        .setColor(message.member.displayHexColor)
         .setThumbnail(message.author.displayAvatarURL)
         .setFooter("This action was performed automatically")
         .setTimestamp()
@@ -39,7 +39,7 @@ module.exports = {
 
         var embed = new Discord.RichEmbed()
           .setAuthor("User Info", person.user.displayAvatarURL)
-          .setColor("#9400ff")
+          .setColor(person.displayHexColor)
           .setThumbnail(person.user.displayAvatarURL)
           .setFooter("This action was performed automatically")
           .setTimestamp()
