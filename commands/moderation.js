@@ -76,7 +76,7 @@ module.exports = {
       message.reply("you don't have permissions to use this command!");
     }
   },
-  game: function(message, bot, isTest) {
+  playing: function(message, bot, isTest) {
     var owner = message.guild.roles.get("306234174321328129");
     var dungeonMaster = message.guild.roles.get("368484031458705409");
     var secretServices = message.guild.roles.get("388167285077966859");

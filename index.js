@@ -105,8 +105,8 @@ bot.on("message", message => {
     game.maria(message);
   } else if (command == "!CLEAR") {
     mod.clear(message, Discord, bot, isTest);
-  } else if (command == "!GAME") {
-    mod.game(message, bot, isTest)
+  } else if (command == "!PLAYING") {
+    mod.playing(message, bot, isTest)
   }
 });
 
