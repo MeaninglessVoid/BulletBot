@@ -180,6 +180,8 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
   )
     return;
 
+  if (oldMessage.content == newMessage.content) return;
+
   var embed = new Discord.RichEmbed()
     .setAuthor("Edited Message", oldMessage.author.displayAvatarURL)
     .setThumbnail(oldMessage.author.displayAvatarURL)
