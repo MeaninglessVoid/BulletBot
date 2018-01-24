@@ -107,6 +107,12 @@ bot.on("message", message => {
     mod.clear(message, Discord, bot, isTest);
   } else if (command == "!PLAYING") {
     mod.playing(message, bot, isTest)
+  } else if (command == "!WATCHING") {
+    mod.watching(message, bot, isTest)
+  } else if (command == "!LISTENING") {
+    mod.listening(message, bot, isTest)
+  } else if (command == "!STREAMING") {
+    mod.streaming(message, bot, isTest)
   }
 });
 

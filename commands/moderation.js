@@ -96,5 +96,68 @@ module.exports = {
 
       message.delete().catch(console.error)
     }
+  },
+  watching: function(message, bot, isTest) {
+    var owner = message.guild.roles.get("306234174321328129");
+    var dungeonMaster = message.guild.roles.get("368484031458705409");
+    var secretServices = message.guild.roles.get("388167285077966859");
+    var headAdmin = message.guild.roles.get("354392788424589342");
+
+    if (
+      message.member.roles.has(owner.id) ||
+      message.member.roles.has(dungeonMaster.id) ||
+      message.member.roles.has(secretServices.id) ||
+      message.member.roles.has(headAdmin.id) ||
+      isTest
+    ) {
+      let argsL = message.content.split(" ").splice(1)
+      var game = argsL.join(" ");
+
+      bot.user.setActivity(game, { type: "WATCHING" });
+
+      message.delete().catch(console.error)
+    }
+  },
+  listening: function(message, bot, isTest) {
+    var owner = message.guild.roles.get("306234174321328129");
+    var dungeonMaster = message.guild.roles.get("368484031458705409");
+    var secretServices = message.guild.roles.get("388167285077966859");
+    var headAdmin = message.guild.roles.get("354392788424589342");
+
+    if (
+      message.member.roles.has(owner.id) ||
+      message.member.roles.has(dungeonMaster.id) ||
+      message.member.roles.has(secretServices.id) ||
+      message.member.roles.has(headAdmin.id) ||
+      isTest
+    ) {
+      let argsL = message.content.split(" ").splice(1)
+      var game = argsL.join(" ");
+
+      bot.user.setActivity(game, { type: "LISTENING" });
+
+      message.delete().catch(console.error)
+    }
+  },
+  streaming: function(message, bot, isTest) {
+    var owner = message.guild.roles.get("306234174321328129");
+    var dungeonMaster = message.guild.roles.get("368484031458705409");
+    var secretServices = message.guild.roles.get("388167285077966859");
+    var headAdmin = message.guild.roles.get("354392788424589342");
+
+    if (
+      message.member.roles.has(owner.id) ||
+      message.member.roles.has(dungeonMaster.id) ||
+      message.member.roles.has(secretServices.id) ||
+      message.member.roles.has(headAdmin.id) ||
+      isTest
+    ) {
+      let argsL = message.content.split(" ").splice(1)
+      var game = argsL.join(" ");
+
+      bot.user.setActivity(game, { type: "STREAMING" });
+
+      message.delete().catch(console.error)
+    }
   }
 };
