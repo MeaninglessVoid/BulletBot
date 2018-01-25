@@ -52,6 +52,26 @@ module.exports = {
         return;
       }
 
+      var embed = new Discord.RichEmbed()
+        .setAuthor("Bulk Delete", message.author.displayAvatarURL)
+        .setColor("#990000")
+        .setTimestamp()
+        .addField(
+          "Bulk Message Deletion",
+          `The !clear command was used by ${
+            message.author.username
+          } and ${times} message(s) were cleared from #${message.channel.name}`,
+          false
+        );
+
+      bot.guilds
+        .first()
+        .channels.get("402246491445657610")
+        .send({
+          embed
+        })
+        .catch(console.error);
+
       if (message.mentions.members.first() == undefined) {
         message.channel
           .fetchMessages({ limit: times + 1 })
