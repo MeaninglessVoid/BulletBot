@@ -3,6 +3,7 @@ const token = require("./token.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 
+const test = require("./commands/test");
 const basic = require("./commands/basic");
 const help = require("./commands/help");
 const roles = require("./commands/roleManagement");
@@ -16,11 +17,11 @@ let timedOutMembers = [];
 bot.on("ready", () => {
   console.log("Ready");
   bot.channels
-    .get("358341168066723845")
-    .send(
-      `${bot.guilds.first().roles.get("354392788424589342")} I have restarted`
-    )
-    .catch(console.error);
+    // .get("358341168066723845")
+    // .send(
+    //   `${bot.guilds.first().roles.get("354392788424589342")} I have restarted`
+    // )
+    // .catch(console.error);
   bot.user.setActivity("all of Barry's videos", { type: "WATCHING" });
   bot.guilds
     .first()
@@ -60,6 +61,10 @@ bot.on("message", message => {
     message.author.id == "148847883632902151"
   ) {
     isTest = true;
+  }
+
+  if(command == "!TEST" && isTest) {
+    test.test(message)
   }
 
   if (message.channel.id == "384171995597897728" || isTest) {
