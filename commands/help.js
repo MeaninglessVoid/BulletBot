@@ -60,11 +60,8 @@ module.exports = {
 
             collector.on("end", collected => {
               if (collected.size == 0) {
-                console.log("empty");
                 return;
               }
-
-              console.log(collected);
 
               if (collected) var first = collected.first().emoji.name;
               switch (first) {
