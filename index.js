@@ -104,16 +104,16 @@ bot.on("message", message => {
     help.help(bot, message);
   } else if (command == "!INVITE" || command == "!INV") {
     basic.invite(message);
+  } else if (command == "!REQUEST") {
+    basic.request(message, bot, Discord);
   } else if (command == "!SHUTDOWN") {
     mod.shutdown(message, bot, isTest);
   } else if (command == "!VC") {
     game.vc(message);
-  } else if (command == "!GIVEAWAY") {
-    giveaway.giveaway(message, Discord, bot);
-  } else if (command == "!REQUEST") {
-    basic.request(message, bot, Discord);
   } else if (command == "!MARIA") {
     game.maria(message);
+  } else if (command == "!GIVEAWAY") {
+    giveaway.giveaway(message, Discord, bot);
   } else if (command == "!CLEAR") {
     mod.clear(message, Discord, bot, isTest);
   } else if (command == "!PLAYING") {
