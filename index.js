@@ -64,7 +64,7 @@ bot.on("message", message => {
   }
 
   if(command == "!TEST" && isTest) {
-    test.test(message, bot, Discord)
+    test.test()
   }
 
   if (message.channel.id == "384171995597897728" || isTest) {
