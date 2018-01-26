@@ -54,7 +54,7 @@ module.exports = {
 
       var embed = new Discord.RichEmbed()
         .setAuthor("Bulk Delete", message.author.displayAvatarURL)
-        .setColor("#990000")
+        .setColor("#0000ff")
         .setTimestamp()
         .addField(
           "Bulk Message Deletion",
