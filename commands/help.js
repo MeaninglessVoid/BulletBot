@@ -8,7 +8,6 @@ module.exports = {
       .setThumbnail(bot.user.displayAvatarURL)
       .setFooter("This action was preformed automatically")
       .setTimestamp()
-      // .addField('Construction', "This command is under construction, try again later!", false)
       .addField(
         "!userinfo or !ui",
         "gives you basic information on yourself!",
