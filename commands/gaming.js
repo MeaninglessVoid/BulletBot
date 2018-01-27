@@ -123,7 +123,7 @@ module.exports = {
       "My reply is no",
       "My sources say no",
       "Outlook not so good",
-      "Very doubtfuls"
+      "Very doubtful"
     ];
 
     var response = responses[Math.floor(Math.random() * responses.length)];
