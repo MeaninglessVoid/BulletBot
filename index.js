@@ -63,8 +63,8 @@ bot.on("message", message => {
     isTest = true;
   }
 
-  if(command == "!TEST" && isTest) {
-    test.test()
+  if (command == "!TEST" && isTest) {
+    test.test();
   }
 
   if (message.channel.id == "384171995597897728" || isTest) {
@@ -94,9 +94,12 @@ bot.on("message", message => {
   ) {
     if (command == "!USERINFO" || command == "!UI") {
       ui.ui(message, Discord);
-      return;
     } else if (command == "!VERSION" || command == "!V") {
       basic.version(message, bot, Discord);
+    } else if (command == "!FLIP") {
+      game.coinflip(message, Discord);
+    } else if (command == "!8BALL") {
+      game.eightBall(message, Discord);
     }
   }
 

@@ -24,6 +24,16 @@ module.exports = {
         false
       )
       .addField(
+        "!flip",
+        "flips a coin!",
+        false
+      )
+      .addField(
+        "!8ball <question>",
+        "gets the magic 8-ball to answer your question",
+        false
+      )
+      .addField(
         "!version or !v",
         "gives you basic information on the bot such as verison number and github repository",
         false
