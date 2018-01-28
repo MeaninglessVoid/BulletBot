@@ -86,6 +86,7 @@ module.exports = {
       .setAuthor("Coinflip", message.author.displayAvatarURL)
       .setColor(message.member.displayHexColor)
       .setTimestamp()
+      .setThumbnail("https://i.imgur.com/hPCYkuG.gif")
       .setDescription("I am flipping a coin...");
 
     message.channel
@@ -96,6 +97,7 @@ module.exports = {
             .setAuthor("Coinflip", message.author.displayAvatarURL)
             .setColor(message.member.displayHexColor)
             .setTimestamp()
+            .setThumbnail("https://i.imgur.com/hPCYkuG.gif")
             .setDescription(`You flipped a ${headsOrTails}`);
           toEdit.edit({ embed }).catch(console.error);
         }, 2000);
