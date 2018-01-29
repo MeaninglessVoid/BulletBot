@@ -133,7 +133,9 @@ module.exports = {
     var embed = new Discord.RichEmbed()
       .setAuthor(`8ball`, message.author.displayAvatarURL)
       .setColor(message.member.displayHexColor)
-      .setDescription(`The magic 8-ball says: ${response}`);
+      .setThumbnail("https://i.imgur.com/z7ayPJL.gif")
+      .addField("Quesion", message.content)
+      .addField("Answer", response)
 
     message.channel.send({ embed }).catch(console.error);
   }
