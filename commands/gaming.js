@@ -4,12 +4,12 @@ module.exports = {
     if (message.member.voiceChannel == undefined) {
       message.reply(
         "You must already be in a voice channel to use this command"
-      );
-      message.delete();
+      ).catch(console.error);
+      message.delete().catch(console.error);
       return;
     }
 
-    message.delete();
+    message.delete().catch(console.error);
 
     game = `🎮 ${message.author.username}'s Gaming Channel`;
 
