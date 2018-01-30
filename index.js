@@ -14,12 +14,13 @@ const mod = require("./commands/moderation");
 
 let timedOutMembers = [];
 
-// const music = require("discord.js-music-v11");
-// music(bot, {
-//   maxQueueSize: 10
-// });
+const music = require("discord.js-music-v11");
+music(bot, {
+  maxQueueSize: 10
+});
 
 bot.on("ready", () => {
+  bot.guilds.first().unban("340002869912666114")
   console.log("Ready");
   // bot.channels
   //   .get("358341168066723845")

@@ -45,11 +45,6 @@ module.exports = {
     var pjson = require("../package.json");
     embed.addField("Version", `v${pjson.version}`, false);
     embed.addField(
-      "Bot Developers",
-      "<@340002869912666114> <@192137039167094784>",
-      false
-    );
-    embed.addField(
       "Github Repository",
       "https://github.com/MeaninglessVoid/BulletBot",
       false
