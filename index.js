@@ -110,8 +110,8 @@ bot.on("message", message => {
 
   if (command == "!HELP") {
     help.help(message, bot);
-  } else if (command == "!MODHELP") {
-    help.modhelp(message, bot, isTest)
+  } else if (command == "!STAFFHELP") {
+    help.staffhelp(message, bot, isTest)
   } else if (command == "!INVITE" || command == "!INV") {
     basic.invite(message);
   } else if (command == "!REQUEST") {
