@@ -83,6 +83,20 @@ module.exports = {
         Roles: Head Admin+
         WARNING: may not work effectively if the bot is being hosted using pm2`,
           false
+        )
+        .addField(
+          "TO TIME PEOPLE OUT",
+          `When timing people out please make sure to add the timeout role, the bot will automatically remove the member role
+        Roles: Mod+
+        WARNING: removing the member role manually may throw the bot off and cause people to be able to avoid punishment`,
+          false
+        )
+        .addField(
+          "TO REMOVE TIMEOUT",
+          `When removing the timeout role, please just give people member, the bot will remove the timeout role
+        Roles: Admin+
+        WARNING: removing the timeout role manually will throw the bot off and throw people into timeout if they leave/rejoin the server`,
+          false
         );
 
       message.channel
