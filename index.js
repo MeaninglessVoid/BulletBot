@@ -20,12 +20,11 @@ music(bot, {
 });
 
 bot.on("ready", () => {
-  bot.guilds.first().unban("340002869912666114")
   console.log("Ready");
   // bot.channels
   //   .get("358341168066723845")
   //   .send(
-  //     `${bot.guilds.first().roles.get("354392788424589342")} I have restarted`
+  //     `${bot.guilds.first().roles.get("354392788424589342")} I have restarted
   //   )
   //   .catch(console.error);
   bot.user.setActivity("all of Barry's videos", { type: "WATCHING" });
