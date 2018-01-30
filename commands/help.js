@@ -48,7 +48,7 @@ module.exports = {
       .catch(console.error);
     message.delete();
   },
-  modhelp: function(message, bot) {
+  modhelp: function(message, bot, isTest) {
     var dungeonMaster = message.guild.roles.get("368484031458705409");
     var headAdmin = message.guild.roles.get("354392788424589342");
     var admin = message.guild.roles.get("322941932848283662");
