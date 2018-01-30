@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  help: function(bot, message) {
+  help: function(message, bot) {
     var embed = new Discord.RichEmbed()
       .setAuthor("Help", message.author.displayAvatarURL)
       .setColor("#9400ff")
@@ -51,5 +51,36 @@ module.exports = {
       })
       .catch(console.error);
     message.delete();
+  },
+  modhelp: function(message, bot) {
+    var embed = new Discord.RichEmbed()
+      .setAuthor("Help", message.author.displayAvatarURL)
+      .setColor("#9400ff")
+      .setThumbnail(bot.user.displayAvatarURL)
+      .setFooter("This action was preformed automatically")
+      .setTimestamp()
+      .addField(
+        "!clear <number of messages to delete> @user",
+        `Will delete a certain number of messages from mentioned user, if the user is ommited, will delete the previous x number of mentions
+        Ex: '!clear 10' will delete last 10 messages
+        WARNING: you can only delete up to 99 messages per command
+        ROLES: Mod+`,
+        false
+      )
+      .addField(
+        "!shutdown",
+        `This command will shutoff the bot and delete all the created voice channels
+        WARNING: may not work effectively if the bot is being hosted using pm2
+        Roles: Head Admin+`,
+        false
+      )
+
+    message.channel
+      .send({
+        embed
+      })
+      .catch(console.error);
+    message.delete();
+
   }
 };
