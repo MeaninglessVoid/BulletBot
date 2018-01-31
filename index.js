@@ -14,11 +14,6 @@ const mod = require("./commands/moderation");
 
 let timedOutMembers = [];
 
-const music = require("discord.js-music-v11");
-music(bot, {
-  maxQueueSize: 10
-});
-
 bot.on("ready", () => {
   console.log("Ready");
   // bot.channels
