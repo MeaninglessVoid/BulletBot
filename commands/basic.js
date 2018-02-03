@@ -12,7 +12,11 @@ module.exports = {
       return;
     }
 
-    message.member.addRole("306234601817505793").catch(console.error); //add member role
+    if (message.member != undefined) {
+      message.member.addRole("306234601817505793").catch(console.error); //add member role
+    } else {
+      message.channel.send(`I am having trouble giving this member the member role, may you please do so manually. @Mod @Admin`)
+    }
 
     message.delete();
   },

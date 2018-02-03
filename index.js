@@ -16,12 +16,6 @@ let timedOutMembers = [];
 
 bot.on("ready", () => {
   console.log("Ready");
-  // bot.channels
-  //   .get("358341168066723845")
-  //   .send(
-  //     `${bot.guilds.first().roles.get("354392788424589342")} I have restarted
-  //   )
-  //   .catch(console.error);
   bot.user.setActivity("all of Barry's videos", { type: "WATCHING" });
   bot.guilds
     .first()
