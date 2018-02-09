@@ -97,32 +97,46 @@ bot.on("message", message => {
     }
   }
 
-  if (command == "!HELP") {
-    help.help(message, bot);
-  } else if (command == "!STAFFHELP") {
-    help.staffhelp(message, bot, isTest)
-  } else if (command == "!INVITE" || command == "!INV") {
-    basic.invite(message);
-  } else if (command == "!REQUEST") {
-    basic.request(message, bot, Discord);
-  } else if (command == "!SHUTDOWN") {
-    mod.shutdown(message, bot, isTest);
-  } else if (command == "!VC") {
-    game.vc(message);
-  } else if (command == "!MARIA") {
-    game.maria(message);
-  } else if (command == "!GIVEAWAY") {
-    giveaway.giveaway(message, Discord, bot);
-  } else if (command == "!CLEAR") {
-    mod.clear(message, Discord, bot, isTest);
-  } else if (command == "!PLAYING") {
-    mod.playing(message, bot, isTest);
-  } else if (command == "!WATCHING") {
-    mod.watching(message, bot, isTest);
-  } else if (command == "!LISTENING") {
-    mod.listening(message, bot, isTest);
-  } else if (command == "!STREAMING") {
-    mod.streaming(message, bot, isTest);
+  switch (command) {
+    case "!HELP":
+      help.help(message, bot);
+      break;
+    case "!STAFFHELP":
+      help.staffhelp(message, bot, isTest);
+      break;
+    case "!INVITE" || "!INV":
+      basic.invite(message);
+      break;
+    case "REQUEST":
+      basic.request(message, bot, Discord);
+      break;
+    case "!SHUTDOWN":
+      mod.shutdown(message, bot, isTest);
+      break;
+    case "!VC":
+      game.vc(message);
+      break;
+    case "!MARIA":
+      game.maria(message);
+      break;
+    case "!GIVEAWAY":
+      giveaway.giveaway(message, Discord, bot);
+      break;
+    case "!CLEAR":
+      mod.clear(message, Discord, bot, isTest);
+      break;
+    case "!PLAYING":
+      mod.playing(message, bot, isTest);
+      break;
+    case "!WATCHING":
+      mod.watching(message, bot, isTest);
+      break;
+    case "!LISTENING":
+      mod.listening(message, bot, isTest);
+      break;
+    case "!STREAMING":
+      mod.streaming(message, bot, isTest);
+      break;
   }
 });
 
